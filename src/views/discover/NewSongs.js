@@ -3,15 +3,32 @@ import {
   View,
   Image,
   Text,
+  ListView,
   StyleSheet
 } from 'react-native';
 
 import { connect } from 'react-redux';
 import * as songsActions from '../../actions/songs';
 
+const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
+
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    paddingTop: 5,
+    paddingBottom: 5,
+    alignItems: 'flex-start'
+  },
+
+  item: {
+    alignItems: 'center',
+    marginBottom: 20
+  },
+
+  itemTitle: {
+    marginTop: 10
   }
 });
 
@@ -87,26 +104,37 @@ class NewSongs extends Component {
 
   render() {
     const { width } = this.state;
-    const songWidth = width / 2;
+    const songWidth = (width / 2);
     const imageDimesion = songWidth - 10;
 
     return (
       <View
-        style={styles.container}
         ref="container"
         onLayout={this.measure}
+        style={{ flex: 1 }}
       >
-        {this.getSongs().map(song => (
-          <View
-            style={{ width: songWidth }}
-            key={song.id}
-          >
-            <Image
-              source={{ uri: song.pic }}
-              style={{ width: imageDimesion, height: imageDimesion }}
-            />
-          </View>
-        ))}
+        <ListView
+          contentContainerStyle={[styles.container, { width }]}
+          enableEmptySections
+          showsVerticalScrollIndicator
+          automaticallyAdjustContentInsets={false}
+          renderHeader={() => (
+            <View />
+          )}
+          dataSource={ds.cloneWithRows(this.getSongs())}
+          renderRow={song => (
+            <View
+              style={[styles.item, { width: songWidth }]}
+              key={song.id}
+            >
+              <Image
+                source={{ uri: song.pic }}
+                style={{ width: imageDimesion, height: imageDimesion }}
+              />
+              <Text style={styles.itemTitle}>{song.name}</Text>
+            </View>
+          )}
+        />
       </View>
     );
   }

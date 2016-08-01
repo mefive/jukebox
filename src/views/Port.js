@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
   },
 
   scence: {
+    flex: 1,
     paddingTop: 64,
     paddingBottom: 0
   }
