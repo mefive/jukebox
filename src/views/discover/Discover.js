@@ -8,6 +8,8 @@ import ScrollableTabView from 'react-native-scrollable-tab-view';
 import TabBar from '../../lib/scrollableTabBar/TabBar';
 import * as color from '../../constants/color';
 
+import NewSongs from './NewSongs';
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -16,7 +18,8 @@ const styles = StyleSheet.create({
   },
 
   tabBar: {
-    height: 40
+    height: 40,
+    backgroundColor: color.blue
   },
 
   tab: {
@@ -24,17 +27,34 @@ const styles = StyleSheet.create({
   }
 });
 
+const NEW_SONGS_VIEW = 0;
+const HOT_VIEW = 1;
+const PLAYLIST_VIEW = 2;
+const DJ_VIEW = 3;
+
 export default class Discover extends Component {
-  getText() {
-    return '123';
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      currentView: NEW_SONGS_VIEW
+    };
+  }
+
+  changeTab(index) {
+    if (this.state.currentView !== index) {
+      this.setState({ currentView: index });
+    }
   }
 
   render() {
     const { style } = this.props;
+    const { currentView } = this.state;
 
     return (
       <ScrollableTabView
         style={[styles.container, style]}
+        tabBarInactiveTextColor={color.white}
         tabBarUnderlineColor={color.primary}
         tabBarProps={{
           style: styles.tabBar
@@ -44,15 +64,30 @@ export default class Discover extends Component {
             style={styles.tabBar}
             tabStyle={styles.tab}
             underlineHeight={2}
-            activeTextColor={color.primary}
+            activeTextColor={color.white}
             inactiveTextColor={color.text}
           />
         )}
+        onChangeTab={change => {
+          this.changeTab(change.i);
+        }}
       >
-        <View tabLabel="新碟新曲" />
-        <View tabLabel="热门" />
-        <View tabLabel="歌单" />
-        <View tabLabel="DJ" />
+        <NewSongs
+          tabLabel="新碟新曲"
+          isCurrentView={currentView === NEW_SONGS_VIEW}
+        />
+        <View
+          tabLabel="热门"
+          isCurrentView={currentView === HOT_VIEW}
+        />
+        <View
+          tabLabel="歌单"
+          isCurrentView={currentView === PLAYLIST_VIEW}
+        />
+        <View
+          tabLabel="DJ"
+          isCurrentView={currentView === DJ_VIEW}
+        />
       </ScrollableTabView>
     );
   }

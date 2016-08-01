@@ -3,19 +3,6 @@ import { createReducer } from 'redux-immutablejs';
 import * as types from '../constants/actionTypes';
 import * as utils from '../utils';
 
-const artistModel = {
-  img1v1Id: 0,
-  albumSize: 0,
-  img1v1Url: '',
-  trans: '',
-  picId: 0,
-  musicSize: 0,
-  picUrl: '',
-  briefDesc: '',
-  name: '',
-  id: 0
-};
-
 const albumModel = {
   paid: false,
   onSale: false,
@@ -31,12 +18,7 @@ const albumModel = {
   picUrl: ''
 };
 
-const albumsModel = {
-  loading: false,
-  data: {}
-};
-
-const initialState = Immutable.fromJS(albumsModel);
+const initialState = Immutable.fromJS({});
 
 function updateAlbum(immutable, raw) {
   const album = utils.restrictMerge(albumModel, raw);
@@ -46,24 +28,23 @@ function updateAlbum(immutable, raw) {
 export default createReducer(initialState, {
   [types.UPDATE_NEW_ALBUMS]: (state, action) => {
     const { data: raw = [] } = action;
-    let data = state.get('data');
+    let rt = state;
 
     for (const i of raw) {
-      data = updateAlbum(data, i);
+      rt = updateAlbum(rt, i);
     }
 
-    return state.set('data', data);
+    return rt;
   },
 
   [types.UPDATE_NEW_SONGS]: (state, action) => {
     const { data: raw = [] } = action;
-    let data = state.get('data');
+    let rt = state;
 
     for (const i of raw) {
-      const { album } = i;
-      data = updateAlbum(data, album);
+      rt = updateAlbum(rt, i.album);
     }
 
-    return state.set('data', data);
+    return rt;
   }
 });

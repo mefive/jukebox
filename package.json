@@ -11,6 +11,7 @@
     "lodash": "^4.13.1",
     "react": "15.2.0",
     "react-native": "^0.29.0",
+    "react-native-blur": "^1.0.0",
     "react-native-keyboard-spacer": "^0.3.0",
     "react-native-scrollable-tab-view": "^0.5.3",
     "react-native-swiper": "^1.4.6",

@@ -1,0 +1,138 @@
+import React, { Component, PropTypes } from 'react';
+import {
+  View,
+  Image,
+  Text,
+  StyleSheet
+} from 'react-native';
+
+import { connect } from 'react-redux';
+import * as songsActions from '../../actions/songs';
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  }
+});
+
+class NewSongs extends Component {
+  constructor(props) {
+    super(props);
+
+    this.measure = this.measure.bind(this);
+
+    this.state = {
+      width: 0
+    };
+  }
+
+  componentDidMount() {
+    this.tryLoad(this.props.isCurrentView);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { isCurrentView } = nextProps;
+
+    if (this.props.isCurrentView !== isCurrentView) {
+      this.tryLoad(isCurrentView);
+    }
+  }
+
+  getSongs() {
+    let { songs, albums, ids } = this.props;
+
+    songs = songs.toJS();
+    ids = ids.toJS();
+    albums = albums.toJS();
+
+    const rt = [];
+
+    for (const i of ids) {
+      const song = songs[i];
+      const album = albums[song.albumId];
+
+      rt.push(Object.assign(
+        song,
+        { pic: album.picUrl }
+      ));
+    }
+
+    return rt;
+  }
+
+  tryLoad(isCurrentView) {
+    const { ids, loading, dispatch } = this.props;
+
+    if (!isCurrentView) {
+      return;
+    }
+
+    if (ids.size !== 0 || loading) {
+      return;
+    }
+
+    dispatch(songsActions.getNewSongs({}));
+  }
+
+  measure() {
+    if (this.state.width) {
+      return;
+    }
+
+    const { container } = this.refs;
+    container.measure((x, y, width) => {
+      this.setState({ width });
+    });
+  }
+
+  render() {
+    const { width } = this.state;
+    const songWidth = width / 2;
+    const imageDimesion = songWidth - 10;
+
+    return (
+      <View
+        style={styles.container}
+        ref="container"
+        onLayout={this.measure}
+      >
+        {this.getSongs().map(song => (
+          <View
+            style={{ width: songWidth }}
+            key={song.id}
+          >
+            <Image
+              source={{ uri: song.pic }}
+              style={{ width: imageDimesion, height: imageDimesion }}
+            />
+          </View>
+        ))}
+      </View>
+    );
+  }
+}
+
+NewSongs.propTypes = {
+  dispatch: PropTypes.func,
+  ids: PropTypes.object,
+  songs: PropTypes.object,
+  albums: PropTypes.object,
+  loading: PropTypes.bool,
+  isCurrentView: PropTypes.bool
+};
+
+function mapStateToProps(state) {
+  const ids = state.getIn(['newSongs', 'ids']);
+  const songs = state.get('songs');
+  const albums = state.get('albums');
+  const loading = state.getIn(['newSongs', 'loading']);
+
+  return {
+    ids,
+    songs,
+    albums,
+    loading
+  };
+}
+
+export default connect(mapStateToProps)(NewSongs);

@@ -11,6 +11,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import * as color from '../constants/color';
 
 import Discover from './discover/Discover';
+import User from './user/User';
 
 const styles = StyleSheet.create({
   container: {
@@ -59,7 +60,8 @@ const styles = StyleSheet.create({
   },
 
   scence: {
-    paddingTop: 64
+    paddingTop: 64,
+    paddingBottom: 0
   }
 });
 
@@ -121,7 +123,7 @@ export default class extends Component {
             {viewTitles[selectedTab]}</Text>
         </View>
 
-        <TabNavigator tabBarStyle={styles.tabBar} >
+        <TabNavigator tabBarStyle={styles.tabBar} sceneStyle={styles.scence} >
           <TabNavigator.Item
             selected={selectedTab === USER_VIEW}
             renderIcon={this.getIcon(USER_VIEW, false)}
@@ -129,7 +131,7 @@ export default class extends Component {
             onPress={() => this.setState({ selectedTab: USER_VIEW })}
             tabStyle={styles.tab}
           >
-            <View />
+            <User />
           </TabNavigator.Item>
           <TabNavigator.Item
             selected={selectedTab === DISCOVER_VIEW}
@@ -138,7 +140,7 @@ export default class extends Component {
             onPress={() => this.setState({ selectedTab: DISCOVER_VIEW })}
             tabStyle={styles.tab}
           >
-            <Discover style={styles.scence} />
+            <Discover />
           </TabNavigator.Item>
         </TabNavigator>
       </View>
