@@ -90,7 +90,6 @@ const DefaultTabBar = React.createClass({
     const containerWidth = this.props.containerWidth;
     const numberOfTabs = this.props.tabs.length;
     const { page,  textWidths } = this.state;
-    console.log('page', page);
     let tabUnderlineWidth = textWidths.find(i => i.page === page);
 
     tabUnderlineWidth = tabUnderlineWidth ? tabUnderlineWidth.width : 0;

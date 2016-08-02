@@ -8,6 +8,7 @@ import ScrollableTabView from 'react-native-scrollable-tab-view';
 import TabBar from '../../lib/scrollableTabBar/TabBar';
 import * as color from '../../constants/color';
 
+import NewAlbums from './NewAlbums';
 import NewSongs from './NewSongs';
 
 const styles = StyleSheet.create({
@@ -27,17 +28,26 @@ const styles = StyleSheet.create({
   }
 });
 
-const NEW_SONGS_VIEW = 0;
-const HOT_VIEW = 1;
-const PLAYLIST_VIEW = 2;
-const DJ_VIEW = 3;
+const NEW_ALBUMS_VIEW = 0;
+const NEW_SONGS_VIEW = 1;
+const HOT_VIEW = 2;
+const PLAYLIST_VIEW = 3;
+const DJ_VIEW = 4;
+
+const viewLabels = {
+  [NEW_ALBUMS_VIEW]: '新碟',
+  [NEW_SONGS_VIEW]: '新曲',
+  [HOT_VIEW]: '热门',
+  [PLAYLIST_VIEW]: '歌单',
+  [DJ_VIEW]: 'DJ'
+};
 
 export default class Discover extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      currentView: NEW_SONGS_VIEW
+      currentView: NEW_ALBUMS_VIEW
     };
   }
 
@@ -70,20 +80,24 @@ export default class Discover extends Component {
           this.changeTab(change.i);
         }}
       >
+        <NewAlbums
+          tabLabel={viewLabels[NEW_ALBUMS_VIEW]}
+          isCurrentView={currentView === NEW_ALBUMS_VIEW}
+        />
         <NewSongs
-          tabLabel="新碟新曲"
+          tabLabel={viewLabels[NEW_SONGS_VIEW]}
           isCurrentView={currentView === NEW_SONGS_VIEW}
         />
         <View
-          tabLabel="热门"
+          tabLabel={viewLabels[HOT_VIEW]}
           isCurrentView={currentView === HOT_VIEW}
         />
         <View
-          tabLabel="歌单"
+          tabLabel={viewLabels[PLAYLIST_VIEW]}
           isCurrentView={currentView === PLAYLIST_VIEW}
         />
         <View
-          tabLabel="DJ"
+          tabLabel={viewLabels[DJ_VIEW]}
           isCurrentView={currentView === DJ_VIEW}
         />
       </ScrollableTabView>

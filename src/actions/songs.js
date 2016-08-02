@@ -4,7 +4,7 @@ import * as constants from '../constants';
 
 export function getNewSongs({
   offset = 0, limit = 20,
-  area = constants.AREA_OCCIDENT
+  area = constants.SONG_AREA_OCCIDENT
 }) {
   return dispatch => {
     dispatch({
