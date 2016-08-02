@@ -56,9 +56,7 @@ export default class Discover extends Component {
         style={[styles.container, style]}
         tabBarInactiveTextColor={color.white}
         tabBarUnderlineColor={color.primary}
-        tabBarProps={{
-          style: styles.tabBar
-        }}
+        tabBarProps={{ style: styles.tabBar }}
         renderTabBar={() => (
           <TabBar
             style={styles.tabBar}

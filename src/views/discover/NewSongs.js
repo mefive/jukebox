@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import {
   View,
   Image,
@@ -8,13 +8,13 @@ import {
 } from 'react-native';
 
 import { connect } from 'react-redux';
+import TabScenceView from '../../components/TabScenceView';
 import * as songsActions from '../../actions/songs';
 
 const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     flexDirection: 'row',
     flexWrap: 'wrap',
     paddingTop: 5,
@@ -24,7 +24,8 @@ const styles = StyleSheet.create({
 
   item: {
     alignItems: 'center',
-    marginBottom: 20
+    marginBottom: 20,
+    flex: 1
   },
 
   itemTitle: {
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
   }
 });
 
-class NewSongs extends Component {
+class NewSongs extends TabScenceView {
   constructor(props) {
     super(props);
 
@@ -41,18 +42,6 @@ class NewSongs extends Component {
     this.state = {
       width: 0
     };
-  }
-
-  componentDidMount() {
-    this.tryLoad(this.props.isCurrentView);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    const { isCurrentView } = nextProps;
-
-    if (this.props.isCurrentView !== isCurrentView) {
-      this.tryLoad(isCurrentView);
-    }
   }
 
   getSongs() {
@@ -77,12 +66,8 @@ class NewSongs extends Component {
     return rt;
   }
 
-  tryLoad(isCurrentView) {
+  load() {
     const { ids, loading, dispatch } = this.props;
-
-    if (!isCurrentView) {
-      return;
-    }
 
     if (ids.size !== 0 || loading) {
       return;
@@ -118,9 +103,6 @@ class NewSongs extends Component {
           enableEmptySections
           showsVerticalScrollIndicator
           automaticallyAdjustContentInsets={false}
-          renderHeader={() => (
-            <View />
-          )}
           dataSource={ds.cloneWithRows(this.getSongs())}
           renderRow={song => (
             <View
