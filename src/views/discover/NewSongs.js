@@ -63,7 +63,7 @@ class NewSongs extends TabScenceView {
       ));
     }
 
-    return rt;
+    return rt.slice(0, 10);
   }
 
   load() {

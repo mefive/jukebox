@@ -13,6 +13,14 @@ export default class TabScenceView extends Component {
     }
   }
 
+  shouldComponentUpdate(nextProps) {
+    if (this.props.isCurrentView !== nextProps.isCurrentView) {
+      return false;
+    }
+
+    return true;
+  }
+
   tryLoad(isCurrentView) {
     if (isCurrentView) {
       this.load();

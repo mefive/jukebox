@@ -79,7 +79,7 @@ export default class extends Component {
     super(props);
 
     this.state = {
-      selectedTab: DISCOVER_VIEW
+      selectedTab: USER_VIEW
     };
   }
 

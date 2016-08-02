@@ -6,10 +6,7 @@ import {
   StyleSheet
 } from 'react-native';
 import { connect } from 'react-redux';
-import { BlurView, VibrancyView } from 'react-native-blur';
-
-import * as color from '../../constants/color';
-import * as songsActions from '../../actions/songs';
+import { VibrancyView } from 'react-native-blur';
 
 const styles = StyleSheet.create({
   container: {
@@ -18,13 +15,6 @@ const styles = StyleSheet.create({
 });
 
 class User extends Component {
-  componentDidMount() {
-    console.log(123);
-    const { dispatch } = this.props;
-
-    dispatch(songsActions.getNewSongs({}));
-  }
-
   render() {
     const uri = 'http://p4.music.126.net/83zQvZQTGrT4BTm5JiMbBA==/18289276416663628.jpg';
 
