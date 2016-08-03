@@ -15,21 +15,15 @@ const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    paddingTop: 5,
-    paddingBottom: 5,
-    alignItems: 'flex-start'
+    paddingTop: 10,
+    paddingLeft: 10,
+    paddingRight: 10
   },
 
   item: {
-    alignItems: 'center',
-    marginBottom: 20,
-    flex: 1
-  },
-
-  itemTitle: {
-    marginTop: 10
+    flex: 1,
+    flexDirection: 'row',
+    marginBottom: 10
   }
 });
 
@@ -59,7 +53,7 @@ class NewSongs extends TabScenceView {
 
       rt.push(Object.assign(
         song,
-        { pic: album.picUrl }
+        { pic: album.picUrl, albumName: album.name }
       ));
     }
 
@@ -88,9 +82,7 @@ class NewSongs extends TabScenceView {
   }
 
   render() {
-    const { width } = this.state;
-    const songWidth = (width / 2);
-    const imageDimesion = songWidth - 10;
+    const imageDimesion = 40;
 
     return (
       <View
@@ -99,21 +91,36 @@ class NewSongs extends TabScenceView {
         style={{ flex: 1 }}
       >
         <ListView
-          contentContainerStyle={[styles.container, { width }]}
+          contentContainerStyle={[styles.container]}
           enableEmptySections
           showsVerticalScrollIndicator
           automaticallyAdjustContentInsets={false}
           dataSource={ds.cloneWithRows(this.getSongs())}
           renderRow={song => (
             <View
-              style={[styles.item, { width: songWidth }]}
+              style={[styles.item]}
               key={song.id}
             >
               <Image
                 source={{ uri: song.pic }}
                 style={{ width: imageDimesion, height: imageDimesion }}
               />
-              <Text style={styles.itemTitle}>{song.name}</Text>
+
+              <View
+                style={{
+                  flex: 1,
+                  marginLeft: 10,
+                  justifyContent: 'space-between'
+                }}
+              >
+                <Text
+                  style={{}}
+                >{song.name}</Text>
+
+                <Text
+                  style={{}}
+                >{song.artist[0].name} - {song.albumName}</Text>
+              </View>
             </View>
           )}
         />
