@@ -82,6 +82,7 @@ export default class Discover extends Component {
       >
         <NewAlbums
           tabLabel={viewLabels[NEW_ALBUMS_VIEW]}
+          isDefaultView
           isCurrentView={currentView === NEW_ALBUMS_VIEW}
         />
         <NewSongs

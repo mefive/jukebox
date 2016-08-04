@@ -2,7 +2,11 @@ import { Component, PropTypes } from 'react';
 
 export default class TabScenceView extends Component {
   componentDidMount() {
-    this.tryLoad(this.props.isCurrentView);
+    const { isDefaultView, isCurrentView } = this.props;
+
+    if (isDefaultView) {
+      this.tryLoad(isCurrentView);
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -33,5 +37,11 @@ export default class TabScenceView extends Component {
 }
 
 TabScenceView.propTypes = {
-  isCurrentView: PropTypes.bool
+  isCurrentView: PropTypes.bool,
+  isDefaultView: PropTypes.bool
+};
+
+TabScenceView.defaultProps = {
+  isCurrentView: false,
+  isDefaultView: false
 };

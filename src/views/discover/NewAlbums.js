@@ -61,7 +61,7 @@ class NewAlbums extends TabScenceView {
       rt.push(albums[i]);
     }
 
-    return rt.slice(0, 10);
+    return rt;
   }
 
   load() {
