@@ -6,9 +6,10 @@ import * as utils from '../utils';
 const songModel = {
   id: 0,
   albumId: 0,
-  bMusic: {},
-  hMusic: {},
-  lMusic: {},
+  bMusicId: 0,
+  hMusicId: 0,
+  lMusicId: 0,
+  playTime: 0,
   name: '',
   duration: 0,
   starred: false,
@@ -29,6 +30,12 @@ export default createReducer(initialState, {
 
       song.albumId = i.album.id;
       song.artistIds = i.artists.map(j => j.id);
+
+      song.lMusicId = i.lMusic.dfsId;
+      song.bMusicId = i.bMusic.dfsId;
+      song.hMusicId = i.hMusic.dfsId;
+
+      song.playTime = i.lMusic.playTime;
 
       rt = rt.mergeDeep({ [song.id]: song });
     }

@@ -4,12 +4,16 @@ import {
   Image,
   Text,
   ListView,
+  TouchableOpacity,
   StyleSheet
 } from 'react-native';
 
 import { connect } from 'react-redux';
 import TabScenceView from '../../components/TabScenceView';
+
 import * as songsActions from '../../actions/songs';
+import * as playerActions from '../../actions/player';
+
 import * as color from '../../constants/color';
 
 const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
@@ -46,6 +50,7 @@ class NewSongs extends TabScenceView {
     super(props);
 
     this.measure = this.measure.bind(this);
+    this.play = this.play.bind(this);
 
     this.state = {
       width: 0
@@ -74,7 +79,7 @@ class NewSongs extends TabScenceView {
       ));
     }
 
-    return rt;
+    return rt.slice(0, 20);
   }
 
   load() {
@@ -98,6 +103,15 @@ class NewSongs extends TabScenceView {
     });
   }
 
+  play(songId) {
+    const { dispatch } = this.props;
+
+    return () => {
+      console.log('play', songId);
+      dispatch(playerActions.playSong(songId));
+    };
+  }
+
   render() {
     const imageDimesion = 50;
 
@@ -114,27 +128,31 @@ class NewSongs extends TabScenceView {
           automaticallyAdjustContentInsets={false}
           dataSource={ds.cloneWithRows(this.getSongs())}
           renderRow={song => (
-            <View
-              style={[styles.item]}
+            <TouchableOpacity
               key={song.id}
+              onPress={this.play(song.id)}
             >
-              <Image
-                source={{ uri: song.pic }}
-                style={{ width: imageDimesion, height: imageDimesion }}
-              />
+              <View
+                style={[styles.item]}
+              >
+                <Image
+                  source={{ uri: song.pic }}
+                  style={{ width: imageDimesion, height: imageDimesion }}
+                />
 
-              <View style={styles.songTitle}>
-                <Text
-                  style={styles.songName}
-                  numberOfLines={1}
-                >{song.name}</Text>
+                <View style={styles.songTitle}>
+                  <Text
+                    style={styles.songName}
+                    numberOfLines={1}
+                  >{song.name}</Text>
 
-                <Text
-                  style={{ color: color.textLight }}
-                  numberOfLines={1}
-                >{song.artist.name} - {song.albumName}</Text>
+                  <Text
+                    style={{ color: color.textLight }}
+                    numberOfLines={1}
+                  >{song.artist.name} - {song.albumName}</Text>
+                </View>
               </View>
-            </View>
+            </TouchableOpacity>
           )}
         />
       </View>
