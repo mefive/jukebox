@@ -10,11 +10,18 @@ import RNFS from 'react-native-fs';
 
 import * as constants from '../constants';
 import * as songFilesActions from '../actions/songFiles';
+import * as playerActions from '../actions/player';
 
 const songsFolder
 = `${RNFS.CachesDirectoryPath}/${constants.SONG_FILES_FOLDER_NAME}/`;
 
 class Player extends Component {
+  constructor(props) {
+    super(props);
+
+    this.setDuration = this.setDuration.bind(this);
+    this.setCurrentTime = this.setCurrentTime.bind(this);
+  }
   getSong(songId, songFiles) {
     const { dispatch } = this.props;
 
@@ -38,8 +45,6 @@ class Player extends Component {
         toFile: absoluteFileName
       })
         .then(({ statusCode }) => {
-          console.log(song.name, statusCode);
-
           if (statusCode === 200) {
             dispatch(
               songFilesActions.updateSongFiles([fileName])
@@ -52,6 +57,18 @@ class Player extends Component {
     return absoluteFileName;
   }
 
+  setDuration({ duration }) {
+    this.props.dispatch(
+      playerActions.updateDuration(duration));
+  }
+
+  setCurrentTime({ currentTime }) {
+    console.log(currentTime);
+    this.props.dispatch(
+      playerActions.updateCurrentTime(currentTime)
+    );
+  }
+
   render() {
     let { songFiles, player } = this.props;
 
@@ -61,8 +78,6 @@ class Player extends Component {
     const { songId, status } = player;
     const song = this.getSong(songId, songFiles);
 
-    console.log(song);
-
     return (
       <View style={{ height: 0 }}>
         {song
@@ -70,7 +85,8 @@ class Player extends Component {
           <Video
             source={{ uri: song }}
             paused={status !== constants.PLAYER_STATUS_PLAYING}
-            onLoad={(e) => console.log('onload', e)}
+            onLoad={this.setDuration}
+            onProgress={this.setCurrentTime}
             ref="player"
           />
         )

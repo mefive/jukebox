@@ -10,3 +10,17 @@ export function playSong(songId) {
 export const pause = {
   type: types.PUASE_SONG
 };
+
+export function updateDuration(duration) {
+  return {
+    type: types.UPDATE_DURATION,
+    duration
+  };
+}
+
+export function updateCurrentTime(currentTime) {
+  return {
+    type: types.UPDATE_CURRENT_TIME,
+    currentTime
+  };
+}

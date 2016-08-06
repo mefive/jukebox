@@ -6,6 +6,7 @@ import RNFS from 'react-native-fs';
 
 import Port from './views/Port';
 import Player from './views/Player';
+import PlayerPanel from './views/PlayerPanel';
 
 import * as constants from './constants';
 import * as songFilesActions from './actions/songFiles';
@@ -35,6 +36,7 @@ class Main extends Component {
     return (
       <View style={{ flex: 1 }}>
         <Port />
+        <PlayerPanel />
         <Player />
       </View>
     );

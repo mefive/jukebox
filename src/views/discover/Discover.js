@@ -47,7 +47,7 @@ export default class Discover extends Component {
     super(props);
 
     this.state = {
-      currentView: NEW_ALBUMS_VIEW
+      currentView: NEW_SONGS_VIEW
     };
   }
 
@@ -76,17 +76,18 @@ export default class Discover extends Component {
             inactiveTextColor={color.text}
           />
         )}
+        initialPage={NEW_SONGS_VIEW}
         onChangeTab={change => {
           this.changeTab(change.i);
         }}
       >
         <NewAlbums
           tabLabel={viewLabels[NEW_ALBUMS_VIEW]}
-          isDefaultView
           isCurrentView={currentView === NEW_ALBUMS_VIEW}
         />
         <NewSongs
           tabLabel={viewLabels[NEW_SONGS_VIEW]}
+          isDefaultView
           isCurrentView={currentView === NEW_SONGS_VIEW}
         />
         <View

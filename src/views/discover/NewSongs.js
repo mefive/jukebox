@@ -79,7 +79,7 @@ class NewSongs extends TabScenceView {
       ));
     }
 
-    return rt.slice(0, 20);
+    return rt;
   }
 
   load() {
@@ -107,7 +107,6 @@ class NewSongs extends TabScenceView {
     const { dispatch } = this.props;
 
     return () => {
-      console.log('play', songId);
       dispatch(playerActions.playSong(songId));
     };
   }
