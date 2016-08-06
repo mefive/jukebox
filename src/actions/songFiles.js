@@ -6,3 +6,10 @@ export function updateSongFiles(fileNames) {
     fileNames
   };
 }
+
+export function downloadSong(fileName) {
+  return {
+    type: types.DOWNLOAD_SONG,
+    fileName
+  };
+}

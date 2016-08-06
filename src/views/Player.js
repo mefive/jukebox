@@ -22,6 +22,12 @@ class Player extends Component {
     this.setDuration = this.setDuration.bind(this);
     this.setCurrentTime = this.setCurrentTime.bind(this);
   }
+
+  shouldComponentUpdate(nextProps) {
+    return nextProps.songId !== this.props.songId
+      || nextProps.status !== this.props.status;
+  }
+
   getSong(songId, songFiles) {
     const { dispatch } = this.props;
 
@@ -34,26 +40,39 @@ class Player extends Component {
       return null;
     }
 
-    const { lMusicId, mp3Url } = song;
-    const fileName = `${lMusicId}.mp3`;
+    const { hMusicId, hMp3Url } = song;
+
+    const fileName = `${hMusicId}.mp3`;
     const absoluteFileName = `${songsFolder}${fileName}`;
-    const hasFile = songFiles.includes(fileName);
+    const songFile = songFiles[fileName];
+    if (!songFile) {
+      setTimeout(() => {
+        if (this.props.songId === songId) {
+          dispatch(songFilesActions.downloadSong(fileName));
+          console.log('need download', hMp3Url);
 
-    if (!hasFile) {
-      RNFS.downloadFile({
-        fromUrl: mp3Url,
-        toFile: absoluteFileName
-      })
-        .then(({ statusCode }) => {
-          if (statusCode === 200) {
-            dispatch(
-              songFilesActions.updateSongFiles([fileName])
-            );
-          }
-        });
+          RNFS.downloadFile({
+            fromUrl: hMp3Url,
+            toFile: absoluteFileName
+          })
+            .then(({ statusCode }) => {
+              if (statusCode === 200) {
+                dispatch(
+                  songFilesActions.updateSongFiles([fileName])
+                );
+              }
+            });
+        }
+      }, 5000);
 
-      return mp3Url;
+
+      return hMp3Url;
     }
+    else if (songFile.donwloading) {
+      console.log('in donwloading');
+      return hMp3Url;
+    }
+
     return absoluteFileName;
   }
 
@@ -63,19 +82,17 @@ class Player extends Component {
   }
 
   setCurrentTime({ currentTime }) {
-    console.log(currentTime);
     this.props.dispatch(
       playerActions.updateCurrentTime(currentTime)
     );
   }
 
   render() {
-    let { songFiles, player } = this.props;
+    let { songFiles } = this.props;
+    const { songId, status } = this.props;
 
     songFiles = songFiles.toJS();
-    player = player.toJS();
 
-    const { songId, status } = player;
     const song = this.getSong(songId, songFiles);
 
     return (
@@ -99,7 +116,8 @@ class Player extends Component {
 Player.propTypes = {
   dispatch: PropTypes.func,
   songFiles: PropTypes.object,
-  player: PropTypes.object,
+  songId: PropTypes.number,
+  status: PropTypes.string,
   songs: PropTypes.object
 };
 
@@ -110,7 +128,8 @@ function mapStateToProps(state) {
 
   return {
     songFiles,
-    player,
+    songId: player.get('songId'),
+    status: player.get('status'),
     songs
   };
 }

@@ -40,5 +40,19 @@ export default createReducer(initialState, {
       rt = rt.mergeDeep({ [song.id]: song });
     }
     return rt;
+  },
+
+  [types.PLAY_SONG]: (state, action) => {
+    const { songId } = action;
+    let song = state.get(`${songId}`);
+    const hMp3Url = song.get('hMp3Url');
+
+    if (hMp3Url) {
+      return state;
+    }
+
+    const hMusicId = song.get('hMusicId');
+    song = song.set('hMp3Url', utils.getSongUrl(hMusicId));
+    return state.set(`${songId}`, song);
   }
 });

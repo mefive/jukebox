@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import c from './lib/crypto/cryptojs';
 
 export function debounce(func, wait = 10) {
   let timer = null;
@@ -124,4 +125,20 @@ export function restrictMerge(source = {}, data = {}) {
   const restrict = _.pick(data, Object.keys(source));
 
   return Object.assign({}, source, restrict);
+}
+
+export function getSongUrl(fsId) {
+  const keyBytes = c.charenc.UTF8.stringToBytes('3go8&$8*3*3h0k(2)2');
+  const searchBytes
+    = c.charenc.UTF8.stringToBytes(`${fsId}`);
+
+  for (let i = 0; i < searchBytes.length; i++) {
+    searchBytes[i] = searchBytes[i] ^ keyBytes[i % keyBytes.length];
+  }
+
+  let md5Search = c.MD5(searchBytes, { asBytes: true });
+
+  md5Search = c.util.bytesToBase64(md5Search);
+
+  return `http://m2.music.126.net/${md5Search}/${fsId}.mp3`;
 }

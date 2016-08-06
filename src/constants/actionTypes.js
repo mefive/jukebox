@@ -5,6 +5,7 @@ export const UPDATE_NEW_ALBUMS = 'update_get_new_albums';
 // songs
 export const GET_NEW_SONGS = 'get_new_songs';
 export const UPDATE_NEW_SONGS = 'update_new_songs';
+export const DOWNLOAD_SONG = 'download_song';
 
 // player
 export const PLAY_SONG = 'play_song';

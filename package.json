@@ -7,11 +7,11 @@
     "ios": "node node_modules/react-native/local-cli/cli.js run-ios"
   },
   "dependencies": {
-    "cryptojs": "^2.5.3",
     "lodash": "^4.13.1",
     "react": "15.2.0",
     "react-native": "^0.30.0",
     "react-native-blur": "^1.0.0",
+    "react-native-circular-progress": "0.0.7",
     "react-native-fs": "^1.5.1",
     "react-native-keyboard-spacer": "^0.3.0",
     "react-native-scrollable-tab-view": "^0.5.3",

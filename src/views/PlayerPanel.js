@@ -7,6 +7,8 @@ import {
 import { connect } from 'react-redux';
 
 import Icon from 'react-native-vector-icons/Ionicons';
+import { AnimatedCircularProgress } from 'react-native-circular-progress';
+
 import * as color from '../constants/color';
 import * as constants from '../constants';
 import * as playerActions from '../actions/player';
@@ -34,17 +36,21 @@ const styles = StyleSheet.create({
   },
 
   action: {
-    flex: 1
+    flex: 1,
+    position: 'relative'
   },
 
   actionButton: {
-    borderColor: color.primary,
-    borderWidth: 1,
-    width: 30,
-    height: 30,
+    width: 32,
+    height: 32,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 30
+    position: 'absolute',
+    top: -1,
+    left: -1,
+    borderColor: color.primary,
+    borderWidth: 1,
+    borderRadius: 32
   },
 
   actionIcon: {
@@ -104,9 +110,23 @@ class PlayerPanel extends Component {
       return null;
     }
 
+    const { duration, currentTime } = this.props;
+
+    const percent = duration
+      ? Math.floor((currentTime / duration) * 100) || 1
+      : 0;
+
     return (
       <View style={styles.container}>
         <View style={styles.action}>
+          <AnimatedCircularProgress
+            size={30}
+            width={2}
+            fill={percent}
+            backgroundColor={color.white}
+            tintColor={color.primary}
+            rotation={0}
+          />
           <TouchableOpacity
             style={styles.actionButton}
             onPress={this.doAction}
@@ -129,6 +149,8 @@ PlayerPanel.propTypes = {
   dispatch: PropTypes.func,
   songId: PropTypes.number,
   status: PropTypes.string,
+  duration: PropTypes.number,
+  currentTime: PropTypes.number,
   songs: PropTypes.object,
   albums: PropTypes.object,
   artists: PropTypes.object
