@@ -5,8 +5,9 @@ import { connect } from 'react-redux';
 import RNFS from 'react-native-fs';
 
 import Port from './views/Port';
-import Player from './views/Player';
-import PlayerPanel from './views/PlayerPanel';
+import Player from './views/player/Player';
+import PlayerPanel from './views/player/PlayerPanel';
+import DownloadManager from './views/DownloadManager';
 
 import * as constants from './constants';
 import * as songFilesActions from './actions/songFiles';
@@ -38,6 +39,7 @@ class Main extends Component {
         <Port />
         <PlayerPanel />
         <Player />
+        <DownloadManager />
       </View>
     );
   }

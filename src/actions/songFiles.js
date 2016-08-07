@@ -7,9 +7,11 @@ export function updateSongFiles(fileNames) {
   };
 }
 
-export function downloadSong(fileName) {
+export function downloadSong({ songId, fileName, url }) {
   return {
     type: types.DOWNLOAD_SONG,
-    fileName
+    songId,
+    fileName,
+    url
   };
 }

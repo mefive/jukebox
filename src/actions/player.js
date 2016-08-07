@@ -1,9 +1,21 @@
 import * as types from '../constants/actionTypes';
 
-export function playSong(songId) {
-  return {
-    type: types.PLAY_SONG,
-    songId
+export function playSong({ songId, playlistId, playlist }) {
+  return (dispatch, getState) => {
+    const state = getState();
+
+    if (state.getIn(['playlist', 'id']) !== playlistId) {
+      dispatch({
+        type: types.UPDATE_PLAY_LIST,
+        id: playlistId,
+        songs: playlist
+      });
+    }
+
+    dispatch({
+      type: types.PLAY_SONG,
+      songId
+    });
   };
 }
 

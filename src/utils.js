@@ -140,5 +140,7 @@ export function getSongUrl(fsId) {
 
   md5Search = c.util.bytesToBase64(md5Search);
 
+  md5Search = md5Search.replace(/\//g, '_').replace(/\+/g, '-');
+
   return `http://m2.music.126.net/${md5Search}/${fsId}.mp3`;
 }

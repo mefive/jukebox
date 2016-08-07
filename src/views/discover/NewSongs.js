@@ -14,6 +14,7 @@ import TabScenceView from '../../components/TabScenceView';
 import * as songsActions from '../../actions/songs';
 import * as playerActions from '../../actions/player';
 
+import * as constants from '../../constants';
 import * as color from '../../constants/color';
 
 const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
@@ -104,10 +105,16 @@ class NewSongs extends TabScenceView {
   }
 
   play(songId) {
-    const { dispatch } = this.props;
+    const { dispatch, ids } = this.props;
 
     return () => {
-      dispatch(playerActions.playSong(songId));
+      dispatch(
+        playerActions.playSong({
+          songId,
+          playlistId: constants.PLAYLIST_NEW_SONG,
+          playlist: ids.toJS()
+        })
+      );
     };
   }
 

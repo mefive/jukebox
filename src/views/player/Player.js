@@ -8,9 +8,9 @@ import { connect } from 'react-redux';
 import Video from 'react-native-video';
 import RNFS from 'react-native-fs';
 
-import * as constants from '../constants';
-import * as songFilesActions from '../actions/songFiles';
-import * as playerActions from '../actions/player';
+import * as constants from '../../constants';
+import * as songFilesActions from '../../actions/songFiles';
+import * as playerActions from '../../actions/player';
 
 const songsFolder
 = `${RNFS.CachesDirectoryPath}/${constants.SONG_FILES_FOLDER_NAME}/`;
@@ -46,25 +46,15 @@ class Player extends Component {
     const absoluteFileName = `${songsFolder}${fileName}`;
     const songFile = songFiles[fileName];
     if (!songFile) {
-      setTimeout(() => {
-        if (this.props.songId === songId) {
-          dispatch(songFilesActions.downloadSong(fileName));
-          console.log('need download', hMp3Url);
-
-          RNFS.downloadFile({
-            fromUrl: hMp3Url,
-            toFile: absoluteFileName
-          })
-            .then(({ statusCode }) => {
-              if (statusCode === 200) {
-                dispatch(
-                  songFilesActions.updateSongFiles([fileName])
-                );
-              }
-            });
-        }
-      }, 5000);
-
+      // setTimeout(() => {
+      //   if (this.props.songId === songId) {
+      //     console.log('need download', hMp3Url);
+      //
+      //     dispatch(songFilesActions.downloadSong({
+      //       songId, fileName, url: hMp3Url
+      //     }));
+      //   }
+      // }, 5000);
 
       return hMp3Url;
     }

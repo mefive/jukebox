@@ -3,7 +3,7 @@ import { createReducer } from 'redux-immutablejs';
 import * as types from '../constants/actionTypes';
 
 const initialState
-= Immutable.fromJS({ loading: false }).set('ids', new Immutable.Set());
+= Immutable.fromJS({ loading: false }).set('ids', new Immutable.OrderedSet());
 
 export default createReducer(initialState, {
   [types.GET_NEW_SONGS]: state => state.set('loading', true),

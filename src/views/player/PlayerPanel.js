@@ -9,9 +9,9 @@ import { connect } from 'react-redux';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 
-import * as color from '../constants/color';
-import * as constants from '../constants';
-import * as playerActions from '../actions/player';
+import * as color from '../../constants/color';
+import * as constants from '../../constants';
+import * as playerActions from '../../actions/player';
 
 import PlayerPanelSongInfo from './PlayerPanelSongInfo';
 
@@ -92,7 +92,13 @@ class PlayerPanel extends Component {
 
   play() {
     const { songId, dispatch } = this.props;
-    dispatch(playerActions.playSong(songId));
+    const playlist = this.props.playlist.toJS();
+
+    dispatch(playerActions.playSong({
+      songId,
+      playlistId: playlist.id,
+      playlist: playlist.songs
+    }));
   }
 
   doAction() {
@@ -153,7 +159,8 @@ PlayerPanel.propTypes = {
   currentTime: PropTypes.number,
   songs: PropTypes.object,
   albums: PropTypes.object,
-  artists: PropTypes.object
+  artists: PropTypes.object,
+  playlist: PropTypes.object
 };
 
 function mapStateToProps(state) {
@@ -166,7 +173,8 @@ function mapStateToProps(state) {
     currentTime: player.get('currentTime'),
     songs: state.get('songs'),
     artists: state.get('artists'),
-    albums: state.get('albums')
+    albums: state.get('albums'),
+    playlist: state.get('playlist')
   };
 }
 

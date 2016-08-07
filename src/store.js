@@ -11,7 +11,7 @@ const logger = createLogger({
   predicate: (getState, action) => action.type
     !== actionTypes.UPDATE_CURRENT_TIME
 });
-const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+const createStoreWithMiddleware = applyMiddleware(thunk, logger)(createStore);
 
 const state = Immutable.fromJS({});
 const store = reducer(state);

@@ -11,6 +11,10 @@ import artists from './artists';
 
 import player from './player';
 
+import download from './download';
+
+import playlist from './playlist';
+
 const rootReducer = combineReducers({
   albums,
   newAlbums,
@@ -21,7 +25,11 @@ const rootReducer = combineReducers({
 
   artists,
 
-  player
+  player,
+
+  download,
+
+  playlist
 });
 
 export default rootReducer;

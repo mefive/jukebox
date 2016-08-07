@@ -36,6 +36,7 @@ export default createReducer(initialState, {
       song.hMusicId = i.hMusic.dfsId;
 
       song.playTime = i.lMusic.playTime;
+      song.picUrl = i.album.picUrl;
 
       rt = rt.mergeDeep({ [song.id]: song });
     }

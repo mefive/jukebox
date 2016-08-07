@@ -5,7 +5,7 @@ import {
   Text
 } from 'react-native';
 
-import * as color from '../constants/color';
+import * as color from '../../constants/color';
 import _ from 'lodash';
 
 export default class PlayerPanelSongInfo extends Component {
