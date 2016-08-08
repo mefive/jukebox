@@ -1,37 +1,43 @@
 import React, { Component } from 'react';
 import {
   View,
-  Text,
   Image,
   ScrollView,
-  StyleSheet,
   Dimensions
 } from 'react-native';
 import { connect } from 'react-redux';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  }
-});
+const CARD_PREVIEW_WIDTH = 0;
+const CARD_MARGIN = 0;
+const CARD_WIDTH = Dimensions.get('window').width - (CARD_MARGIN + CARD_PREVIEW_WIDTH) * 2;
 
 class PlayerView extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      itemWidth: 0
+      offset: 0
     };
+
+    this.onScrollEnd = this.onScrollEnd.bind(this);
   }
 
-  getWidth() {
-    const { width } = Dimensions.get('window');
-    this.state.itemWidth = width;
+  onScrollEnd(e) {
+    const { x } = e.nativeEvent.contentOffset;
+    const { offset } = this.state;
 
-    return this.state.itemWidth;
+    if (offset !== x) {
+      this.state.offset = x;
+      this.changSong(x / (CARD_WIDTH + CARD_MARGIN * 2));
+    }
+  }
+
+  changSong(index) {
+    console.log('changSong: ', index);
   }
 
   render() {
+    const { songId } = this.props;
     const playlist = this.props.playlist.toJS();
     const songIds = playlist.songs;
     const songs = this.props.songs.toJS();
@@ -42,33 +48,33 @@ class PlayerView extends Component {
       playlistSongs.push(songs[i]);
     }
 
-    let { itemWidth } = this.state;
+    const index = playlistSongs.findIndex(i => i.id === songId);
+    const offset = (CARD_WIDTH + CARD_MARGIN * 2) * index;
 
-    if (itemWidth === 0) {
-      itemWidth = this.getWidth();
-    }
+    this.state.offset = offset;
 
     return (
       <ScrollView
-        style={styles.container}
+        automaticallyAdjustInsets={false}
         horizontal
         pagingEnabled
+        onMomentumScrollEnd={this.onScrollEnd}
+        ref="swiper"
+        contentOffset={{ x: offset }}
       >
-        {playlistSongs.map((i, j) => (
-          <View
+        {playlistSongs.slice(0, 10).map(i => (
+          <Image
             key={i.id}
+            source={{ uri: i.picUrl }}
             style={{
-              padding: 20
+              backgroundColor: '#ccc',
+              width: CARD_WIDTH,
+              margin: CARD_MARGIN,
+              height: CARD_WIDTH,
+              alignItems: 'center',
+              justifyContent: 'center'
             }}
-          >
-            <Image
-              source={{ uri: i.picUrl }}
-              style={{
-                width: itemWidth - 100,
-                height: itemWidth
-              }}
-            />
-          </View>
+          />
         ))}
       </ScrollView>
     );
@@ -82,7 +88,8 @@ PlayerView.propTypes = {
 function mapStateToProps(state) {
   return {
     playlist: state.get('playlist'),
-    songs: state.get('songs')
+    songs: state.get('songs'),
+    songId: state.getIn(['player', 'songId'])
   };
 }
 

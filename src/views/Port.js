@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import {
   View,
   Text,
@@ -12,6 +12,7 @@ import * as color from '../constants/color';
 
 import Discover from './discover/Discover';
 import User from './user/User';
+import PlayerPanel from './player/PlayerPanel';
 
 const styles = StyleSheet.create({
   container: {
@@ -74,7 +75,7 @@ const viewTitles = {
   [DISCOVER_VIEW]: '发现音乐'
 };
 
-export default class extends Component {
+export default class Port extends Component {
   constructor(props) {
     super(props);
 
@@ -112,6 +113,7 @@ export default class extends Component {
 
   render() {
     const { selectedTab } = this.state;
+    const { navigator } = this.props;
 
     return (
       <View style={styles.container}>
@@ -144,7 +146,12 @@ export default class extends Component {
             <Discover />
           </TabNavigator.Item>
         </TabNavigator>
+        <PlayerPanel navigator={navigator} />
       </View>
     );
   }
 }
+
+Port.propTypes = {
+  navigator: PropTypes.object
+};

@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import {
   View,
   TouchableOpacity,
+  TouchableWithoutFeedback,
   StyleSheet
 } from 'react-native';
 import { connect } from 'react-redux';
@@ -11,6 +12,7 @@ import { AnimatedCircularProgress } from 'react-native-circular-progress';
 
 import * as color from '../../constants/color';
 import * as constants from '../../constants';
+import * as navigation from '../../constants/navigation';
 import * as playerActions from '../../actions/player';
 
 import PlayerPanelSongInfo from './PlayerPanelSongInfo';
@@ -62,6 +64,7 @@ class PlayerPanel extends Component {
   constructor(props) {
     super(props);
     this.doAction = this.doAction.bind(this);
+    this.goPlayerView = this.goPlayerView.bind(this);
   }
 
   getIcon() {
@@ -111,6 +114,11 @@ class PlayerPanel extends Component {
     }
   }
 
+  goPlayerView() {
+    const { navigator } = this.props;
+    navigator.push(navigation.ROUTE_PLAY);
+  }
+
   render() {
     if (!this.props.songId) {
       return null;
@@ -123,35 +131,40 @@ class PlayerPanel extends Component {
       : 0;
 
     return (
-      <View style={styles.container}>
-        <View style={styles.action}>
-          <AnimatedCircularProgress
-            size={30}
-            width={2}
-            fill={percent}
-            backgroundColor={color.white}
-            tintColor={color.primary}
-            rotation={0}
-          />
-          <TouchableOpacity
-            style={styles.actionButton}
-            onPress={this.doAction}
-            delayPressIn={0}
-            delayPressOut={0}
-          >
-            {this.getIcon()}
-          </TouchableOpacity>
-        </View>
+      <TouchableWithoutFeedback
+        onPress={this.goPlayerView}
+      >
+        <View style={styles.container}>
+          <View style={styles.action}>
+            <AnimatedCircularProgress
+              size={30}
+              width={2}
+              fill={percent}
+              backgroundColor={color.white}
+              tintColor={color.primary}
+              rotation={0}
+            />
+            <TouchableOpacity
+              style={styles.actionButton}
+              onPress={this.doAction}
+              delayPressIn={0}
+              delayPressOut={0}
+            >
+              {this.getIcon()}
+            </TouchableOpacity>
+          </View>
 
-        <PlayerPanelSongInfo
-          {...this.props}
-        />
-      </View>
+          <PlayerPanelSongInfo
+            {...this.props}
+          />
+        </View>
+      </TouchableWithoutFeedback>
     );
   }
 }
 
 PlayerPanel.propTypes = {
+  navigator: PropTypes.object,
   dispatch: PropTypes.func,
   songId: PropTypes.number,
   status: PropTypes.string,

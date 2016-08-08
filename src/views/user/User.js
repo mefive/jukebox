@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import {
   View,
-  Text,
   Image,
   ScrollView,
-  StyleSheet,
   Dimensions
 } from 'react-native';
 import { connect } from 'react-redux';
-import Swiper from 'react-native-swiper';
 
 const CARD_PREVIEW_WIDTH = 20
 const CARD_MARGIN = 0;
@@ -16,6 +13,7 @@ const CARD_WIDTH = Dimensions.get('window').width - (CARD_MARGIN + CARD_PREVIEW_
 
 class User extends Component {
   render() {
+    const { songId } = this.props;
     const playlist = this.props.playlist.toJS();
     const songIds = playlist.songs;
     const songs = this.props.songs.toJS();
@@ -25,6 +23,11 @@ class User extends Component {
     for (const i of songIds) {
       playlistSongs.push(songs[i]);
     }
+
+    const index = playlistSongs.findIndex(i => i.id === songId);
+    const offset = (CARD_WIDTH + CARD_MARGIN * 2) * index;
+
+    console.log(offset);
 
     return (
       <ScrollView
@@ -37,8 +40,9 @@ class User extends Component {
         contentContainerStyle={{
           paddingHorizontal: CARD_PREVIEW_WIDTH
         }}
+        contentOffset={{ x: offset, y: 0 }}
       >
-        {playlistSongs.map((i, j) => (
+        {playlistSongs.map(i => (
           <Image
             key={i.id}
             source={{ uri: i.picUrl }}
@@ -65,7 +69,8 @@ User.propTypes = {
 function mapStateToProps(state) {
   return {
     playlist: state.get('playlist'),
-    songs: state.get('songs')
+    songs: state.get('songs'),
+    songId: state.getIn(['player', 'songId'])
   };
 }
 
