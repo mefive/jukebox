@@ -4,7 +4,7 @@ export function playSong({ songId, playlistId, playlist }) {
   return (dispatch, getState) => {
     const state = getState();
 
-    if (state.getIn(['playlist', 'id']) !== playlistId) {
+    if (playlistId && state.getIn(['playlist', 'id']) !== playlistId) {
       dispatch({
         type: types.UPDATE_PLAY_LIST,
         id: playlistId,

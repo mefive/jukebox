@@ -11,6 +11,7 @@
     "brace-style": [2, "stroustrup"],
     "no-use-before-define": 0,
     "no-underscore-dangle": 0,
-    "prefer-stateless-function": 0
+    "prefer-stateless-function": 0,
+    "react/no-useless-constructor": 0
   }
 }

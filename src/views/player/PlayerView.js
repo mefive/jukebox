@@ -1,82 +1,71 @@
 import React, { Component } from 'react';
 import {
   View,
-  Image,
-  ScrollView,
   Dimensions
 } from 'react-native';
 import { connect } from 'react-redux';
+import Carousel from '../../components/Carousel';
+import playerActions from '../../actions/player';
 
-const CARD_PREVIEW_WIDTH = 0;
-const CARD_MARGIN = 0;
-const CARD_WIDTH = Dimensions.get('window').width - (CARD_MARGIN + CARD_PREVIEW_WIDTH) * 2;
+const COVER_WIDTH = Dimensions.get('window').width;
 
 class PlayerView extends Component {
   constructor(props) {
     super(props);
+    this.onChange = this.onChange.bind(this);
 
     this.state = {
-      offset: 0
+      playlist: [],
+      songs: []
     };
-
-    this.onScrollEnd = this.onScrollEnd.bind(this);
   }
 
-  onScrollEnd(e) {
-    const { x } = e.nativeEvent.contentOffset;
-    const { offset } = this.state;
-
-    if (offset !== x) {
-      this.state.offset = x;
-      this.changSong(x / (CARD_WIDTH + CARD_MARGIN * 2));
-    }
+  componentWillMount() {
+    this.setStateByProps(this.props);
   }
 
-  changSong(index) {
-    console.log('changSong: ', index);
+  componentWillReceiveProps(nextProps) {
+    this.setStateByProps(nextProps);
+  }
+
+  onChange(index) {
+    const { playlist } = this.state;
+    const songId = playlist[index];
+    this.play(songId);
+  }
+
+  setStateByProps(props) {
+    this.state.playlist = props.playlist.toJS();
+    this.state.songs = props.songs.toJS();
+  }
+
+  play(songId) {
+    const { dispatch } = this.props;
+    dispatch(playerActions.playSong({ songId }));
   }
 
   render() {
+    const { playlist, songs } = this.state;
     const { songId } = this.props;
-    const playlist = this.props.playlist.toJS();
-    const songIds = playlist.songs;
-    const songs = this.props.songs.toJS();
 
     const playlistSongs = [];
 
-    for (const i of songIds) {
+    for (const i of playlist) {
       playlistSongs.push(songs[i]);
     }
 
-    const index = playlistSongs.findIndex(i => i.id === songId);
-    const offset = (CARD_WIDTH + CARD_MARGIN * 2) * index;
-
-    this.state.offset = offset;
+    const index = playlist.findIndex(i => i === songId);
 
     return (
-      <ScrollView
-        automaticallyAdjustInsets={false}
-        horizontal
-        pagingEnabled
-        onMomentumScrollEnd={this.onScrollEnd}
-        ref="swiper"
-        contentOffset={{ x: offset }}
-      >
-        {playlistSongs.slice(0, 10).map(i => (
-          <Image
-            key={i.id}
-            source={{ uri: i.picUrl }}
-            style={{
-              backgroundColor: '#ccc',
-              width: CARD_WIDTH,
-              margin: CARD_MARGIN,
-              height: CARD_WIDTH,
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}
-          />
-        ))}
-      </ScrollView>
+      <Carousel
+        index={index}
+        width={COVER_WIDTH}
+        height={COVER_WIDTH}
+        dataSource={
+          playlistSongs.map(i => ({ uri: i.picUrl, id: i.id })).slice(0, 10)
+        }
+        onChange={this.onChange}
+      />
     );
   }
 }
@@ -87,7 +76,7 @@ PlayerView.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    playlist: state.get('playlist'),
+    playlist: state.getIn(['playlist', 'songs']),
     songs: state.get('songs'),
     songId: state.getIn(['player', 'songId'])
   };
