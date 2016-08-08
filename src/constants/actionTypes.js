@@ -20,3 +20,7 @@ export const DOWNLOAD_SONG_DONE = 'download_song_done';
 
 // playlist
 export const UPDATE_PLAY_LIST = 'update_play_list';
+
+// app status
+export const START_NAVIGATION = 'start_navigation';
+export const END_NAVIGATION = 'end_navigation';

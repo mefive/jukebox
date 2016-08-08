@@ -67,6 +67,10 @@ class PlayerPanel extends Component {
     this.goPlayerView = this.goPlayerView.bind(this);
   }
 
+  shouldComponentUpdate(nextProps) {
+    return !nextProps.onRouting;
+  }
+
   getIcon() {
     const { status } = this.props;
 
@@ -120,6 +124,7 @@ class PlayerPanel extends Component {
   }
 
   render() {
+    console.log('render');
     if (!this.props.songId) {
       return null;
     }
@@ -187,7 +192,8 @@ function mapStateToProps(state) {
     songs: state.get('songs'),
     artists: state.get('artists'),
     albums: state.get('albums'),
-    playlist: state.get('playlist')
+    playlist: state.get('playlist'),
+    onRouting: state.getIn(['appStatus', 'onRouting'])
   };
 }
 

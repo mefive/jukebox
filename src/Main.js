@@ -12,6 +12,7 @@ import DownloadManager from './views/DownloadManager';
 import * as constants from './constants';
 import * as navigation from './constants/navigation';
 import * as songFilesActions from './actions/songFiles';
+import * as appStatusAction from './actions/appStatus';
 
 const songsFolder
 = `${RNFS.CachesDirectoryPath}/${constants.SONG_FILES_FOLDER_NAME}/`;
@@ -35,11 +36,19 @@ class Main extends Component {
   }
 
   render() {
+    const { dispatch } = this.props;
+
     return (
       <View style={{ flex: 1 }}>
         <Navigator
           style={{ flex: 1 }}
           initialRoute={navigation.ROUTE_PORT}
+          onWillFocus={() => {
+            dispatch(appStatusAction.startNavigation());
+          }}
+          onDidFocus={() => {
+            dispatch(appStatusAction.endNavigation());
+          }}
           configureScene={route => {
             switch (route.index) {
               case navigation.ROUTE_PLAY.index:

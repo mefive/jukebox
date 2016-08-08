@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import Carousel from '../../components/Carousel';
-import playerActions from '../../actions/player';
+import * as playerActions from '../../actions/player';
 
 const COVER_WIDTH = Dimensions.get('window').width;
 
@@ -40,6 +40,7 @@ class PlayerView extends Component {
   }
 
   play(songId) {
+    console.log('playSong', songId);
     const { dispatch } = this.props;
     dispatch(playerActions.playSong({ songId }));
   }

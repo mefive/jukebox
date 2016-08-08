@@ -29,6 +29,7 @@ export default class Carousel extends Component {
 
   changPage(index) {
     console.log('changPage: ', index);
+    this.props.onChange(index);
   }
 
   render() {
