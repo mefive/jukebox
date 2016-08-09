@@ -15,7 +15,8 @@ const albumModel = {
   id: 0,
   name: '',
   blurPicUrl: '',
-  picUrl: ''
+  picUrl: '',
+  picId: 0
 };
 
 const initialState = Immutable.fromJS({});

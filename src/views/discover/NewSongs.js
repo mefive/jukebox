@@ -1,15 +1,16 @@
 import React, { PropTypes } from 'react';
 import {
   View,
-  Image,
   Text,
   ListView,
   TouchableOpacity,
   StyleSheet
 } from 'react-native';
+import Immutable from 'immutable';
 
 import { connect } from 'react-redux';
 import TabScenceView from '../../components/TabScenceView';
+import LazyImage from '../common/LazyImage';
 
 import * as songsActions from '../../actions/songs';
 import * as playerActions from '../../actions/player';
@@ -75,7 +76,7 @@ class NewSongs extends TabScenceView {
 
       rt.push(Object.assign(
         song,
-        { pic: album.picUrl, albumName: album.name },
+        { picUrl: album.picUrl, picId: album.picId, albumName: album.name },
         { artist }
       ));
     }
@@ -120,7 +121,7 @@ class NewSongs extends TabScenceView {
 
   render() {
     const imageDimesion = 50;
-
+    const { imageFiles, dispatch } = this.props;
     return (
       <View
         ref="container"
@@ -141,9 +142,12 @@ class NewSongs extends TabScenceView {
               <View
                 style={[styles.item]}
               >
-                <Image
-                  source={{ uri: song.pic }}
+                <LazyImage
+                  url={song.picUrl}
+                  picId={song.picId}
+                  imageFiles={imageFiles}
                   style={{ width: imageDimesion, height: imageDimesion }}
+                  dispatch={dispatch}
                 />
 
                 <View style={styles.songTitle}>
@@ -169,26 +173,22 @@ class NewSongs extends TabScenceView {
 NewSongs.propTypes = {
   dispatch: PropTypes.func,
   ids: PropTypes.object,
+  loading: PropTypes.bool,
   songs: PropTypes.object,
   albums: PropTypes.object,
   artists: PropTypes.object,
-  loading: PropTypes.bool,
-  isCurrentView: PropTypes.bool
+  isCurrentView: PropTypes.bool,
+  imageFiles: PropTypes.instanceOf(Immutable.Map)
 };
 
 function mapStateToProps(state) {
-  const ids = state.getIn(['newSongs', 'ids']);
-  const loading = state.getIn(['newSongs', 'loading']);
-  const songs = state.get('songs');
-  const albums = state.get('albums');
-  const artists = state.get('artists');
-
   return {
-    ids,
-    songs,
-    albums,
-    loading,
-    artists
+    ids: state.getIn(['newSongs', 'ids']),
+    loading: state.getIn(['newSongs', 'loading']),
+    songs: state.get('songs'),
+    albums: state.get('albums'),
+    artists: state.get('artists'),
+    imageFiles: state.get('imageFiles')
   };
 }
 

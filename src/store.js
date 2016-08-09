@@ -8,10 +8,13 @@ import reducer from './reducers/index';
 import * as actionTypes from './constants/actionTypes';
 
 const logger = createLogger({
-  predicate: (getState, action) => action.type
-    !== actionTypes.UPDATE_CURRENT_TIME
+  predicate: (getState, action) => ![
+    actionTypes.UPDATE_CURRENT_TIME,
+    actionTypes.UPDATE_IMAGE_FILES,
+    actionTypes.DOWNLOAD_IMAGE
+  ].includes(action.type)
 });
-const createStoreWithMiddleware = applyMiddleware(thunk, logger)(createStore);
+const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 
 const state = Immutable.fromJS({});
 const store = reducer(state);

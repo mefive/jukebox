@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 
-const CARD_PREVIEW_WIDTH = 20
+const CARD_PREVIEW_WIDTH = 20;
 const CARD_MARGIN = 0;
 const CARD_WIDTH = Dimensions.get('window').width - (CARD_MARGIN + CARD_PREVIEW_WIDTH) * 2;
 
@@ -26,8 +26,6 @@ class User extends Component {
 
     const index = playlistSongs.findIndex(i => i.id === songId);
     const offset = (CARD_WIDTH + CARD_MARGIN * 2) * index;
-
-    console.log(offset);
 
     return (
       <ScrollView

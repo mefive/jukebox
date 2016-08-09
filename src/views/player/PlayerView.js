@@ -40,7 +40,6 @@ class PlayerView extends Component {
   }
 
   play(songId) {
-    console.log('playSong', songId);
     const { dispatch } = this.props;
     dispatch(playerActions.playSong({ songId }));
   }

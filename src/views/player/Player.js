@@ -48,8 +48,6 @@ class Player extends Component {
     if (!songFile) {
       setTimeout(() => {
         if (this.props.songId === songId) {
-          console.log('need download', hMp3Url);
-
           dispatch(filesActions.downloadSong({
             songId, fileName, url: hMp3Url
           }));
@@ -59,7 +57,6 @@ class Player extends Component {
       return hMp3Url;
     }
     else if (songFile.donwloading) {
-      console.log('in donwloading');
       return hMp3Url;
     }
 

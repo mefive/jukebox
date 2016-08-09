@@ -16,7 +16,6 @@ class SongDownloadManager extends Component {
     songs = songs.toJS();
 
     if (downloading) {
-      console.log('in downloading');
       return;
     }
 
@@ -26,7 +25,6 @@ class SongDownloadManager extends Component {
     const keys = Object.keys(queue);
 
     if (keys.length === 0) {
-      console.log('no more to download');
       return;
     }
 
@@ -42,9 +40,7 @@ class SongDownloadManager extends Component {
       toFile: `${songsFolder}${fileName}`
     })
       .then(({ statusCode }) => {
-        console.log(statusCode);
         if (statusCode === 200) {
-          console.log('download done');
           dispatch(
             filesActions.updateSongFiles([fileName])
           );
@@ -60,7 +56,6 @@ class SongDownloadManager extends Component {
         );
       });
 
-    console.log('download start', songId);
     dispatch(downloadActions.downloadSongStart);
   }
 

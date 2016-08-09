@@ -124,7 +124,6 @@ class PlayerPanel extends Component {
   }
 
   render() {
-    console.log('render');
     if (!this.props.songId) {
       return null;
     }
