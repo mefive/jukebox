@@ -2,14 +2,14 @@ import { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import RNFS from 'react-native-fs';
 
-import * as songFilesActions from '../actions/songFiles';
+import * as filesActions from '../actions/files';
 import * as downloadActions from '../actions/download';
 import * as constants from '../constants';
 
 const songsFolder
 = `${RNFS.CachesDirectoryPath}/${constants.SONG_FILES_FOLDER_NAME}/`;
 
-class DownloadManager extends Component {
+class SongDownloadManager extends Component {
   componentDidUpdate() {
     const { downloading } = this.props;
     let { songs } = this.props;
@@ -46,7 +46,7 @@ class DownloadManager extends Component {
         if (statusCode === 200) {
           console.log('download done');
           dispatch(
-            songFilesActions.updateSongFiles([fileName])
+            filesActions.updateSongFiles([fileName])
           );
 
           alert(`download ${songName} succ`);
@@ -69,7 +69,7 @@ class DownloadManager extends Component {
   }
 }
 
-DownloadManager.propTypes = {
+SongDownloadManager.propTypes = {
   dispatch: PropTypes.func,
   downloading: PropTypes.bool,
   queue: PropTypes.object,
@@ -77,13 +77,13 @@ DownloadManager.propTypes = {
 };
 
 function mapStateToProp(state) {
-  const download = state.get('download');
+  const songDownloadQueue = state.get('songDownloadQueue');
 
   return {
-    downloading: download.get('downloading'),
-    queue: download.get('queue'),
+    downloading: songDownloadQueue.get('downloading'),
+    queue: songDownloadQueue.get('queue'),
     songs: state.get('songs')
   };
 }
 
-export default connect(mapStateToProp)(DownloadManager);
+export default connect(mapStateToProp)(SongDownloadManager);

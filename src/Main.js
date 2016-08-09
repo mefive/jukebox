@@ -7,15 +7,18 @@ import RNFS from 'react-native-fs';
 import Port from './views/Port';
 import Player from './views/player/Player';
 import PlayerView from './views/player/PlayerView';
-import DownloadManager from './views/DownloadManager';
+import SongDownloadManager from './views/SongDownloadManager';
 
 import * as constants from './constants';
 import * as navigation from './constants/navigation';
-import * as songFilesActions from './actions/songFiles';
+import * as filesActions from './actions/files';
 import * as appStatusAction from './actions/appStatus';
 
 const songsFolder
 = `${RNFS.CachesDirectoryPath}/${constants.SONG_FILES_FOLDER_NAME}/`;
+
+const imagesFolder
+= `${RNFS.CachesDirectoryPath}/${constants.IMAGE_FILES_FOLDER_NAME}/`;
 
 class Main extends Component {
   componentDidMount() {
@@ -29,7 +32,20 @@ class Main extends Component {
         RNFS.readdir(songsFolder)
           .then(fileNames => {
             dispatch(
-              songFilesActions.updateSongFiles(fileNames)
+              filesActions.updateSongFiles(fileNames)
+            );
+          });
+      });
+
+    RNFS.mkdir(
+      imagesFolder,
+      true
+    )
+      .then(() => {
+        RNFS.readdir(imagesFolder)
+          .then(fileNames => {
+            dispatch(
+              filesActions.updateImageFiles(fileNames)
             );
           });
       });
@@ -81,7 +97,7 @@ class Main extends Component {
           }}
         />
         <Player />
-        <DownloadManager />
+        <SongDownloadManager />
       </View>
     );
   }

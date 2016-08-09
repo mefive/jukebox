@@ -9,7 +9,7 @@ import Video from 'react-native-video';
 import RNFS from 'react-native-fs';
 
 import * as constants from '../../constants';
-import * as songFilesActions from '../../actions/songFiles';
+import * as filesActions from '../../actions/files';
 import * as playerActions from '../../actions/player';
 
 const songsFolder
@@ -46,15 +46,15 @@ class Player extends Component {
     const absoluteFileName = `${songsFolder}${fileName}`;
     const songFile = songFiles[fileName];
     if (!songFile) {
-      // setTimeout(() => {
-      //   if (this.props.songId === songId) {
-      //     console.log('need download', hMp3Url);
-      //
-      //     dispatch(songFilesActions.downloadSong({
-      //       songId, fileName, url: hMp3Url
-      //     }));
-      //   }
-      // }, 5000);
+      setTimeout(() => {
+        if (this.props.songId === songId) {
+          console.log('need download', hMp3Url);
+
+          dispatch(filesActions.downloadSong({
+            songId, fileName, url: hMp3Url
+          }));
+        }
+      }, 5000);
 
       return hMp3Url;
     }

@@ -15,3 +15,17 @@ export function downloadSong({ songId, fileName, url }) {
     url
   };
 }
+
+export function updateImageFiles(fileNames) {
+  return {
+    type: types.UPDATE_IMAGE_FILES,
+    fileNames
+  };
+}
+
+export function downloadImage(fileName) {
+  return {
+    type: types.DOWNLOAD_IMAGE,
+    fileName
+  };
+}
