@@ -4,7 +4,6 @@ import albums from './albums';
 import newAlbums from './newAlbums';
 import songs from './songs';
 import songFiles from './songFiles';
-import imageFiles from './imageFiles';
 import newSongs from './newSongs';
 import artists from './artists';
 import player from './player';
@@ -17,7 +16,6 @@ const rootReducer = combineReducers({
   newAlbums,
   songs,
   songFiles,
-  imageFiles,
   newSongs,
   artists,
   player,

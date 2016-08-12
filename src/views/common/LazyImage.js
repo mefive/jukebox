@@ -2,12 +2,12 @@ import React, { Component, PropTypes } from 'react';
 import { View, Image, Text } from 'react-native';
 import Immutable from 'immutable';
 
-import RNFS from 'react-native-fs';
+import fs from 'react-native-fs';
 import * as constants from '../../constants';
 import * as filesActions from '../../actions/files';
 
 const imagesFolder
-= `${RNFS.CachesDirectoryPath}/${constants.IMAGE_FILES_FOLDER_NAME}/`;
+= `${fs.CachesDirectoryPath}/${constants.IMAGE_FILES_FOLDER_NAME}/`;
 
 export default class LazyImage extends Component {
   constructor(props) {

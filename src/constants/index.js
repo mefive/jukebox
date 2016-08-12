@@ -15,6 +15,6 @@ export const PLAYER_STATUS_PLAYING = 'player_status_playing';
 export const PLAYER_STATUS_PAUSE = 'player_status_pause';
 
 export const SONG_FILES_FOLDER_NAME = 'songs';
-export const IMAGE_FILES_FOLDER_NAME = 'images222';
+export const IMAGE_FILES_FOLDER_NAME = 'imagee2';
 
 export const PLAYLIST_NEW_SONG = 'playlist_top_song';

@@ -36,3 +36,22 @@ export function updateCurrentTime(currentTime) {
     currentTime
   };
 }
+
+export function playNext() {
+  return (dispatch, getState) => {
+    const state = getState();
+    const songs = state.get(['playlist', 'songs']);
+    const playlistId = state.get(['playlist', 'id']);
+    const songId = state.getIn(['player', 'songId']);
+
+    let index = songs.findLastIndex(i => i === songId);
+
+    if (index === -1 || index === songs.size - 1) {
+      index = 0;
+    }
+
+    const nextSongId = songs.get(index);
+
+    dispatch(playSong({ songId: nextSongId, playlistId }));
+  };
+}

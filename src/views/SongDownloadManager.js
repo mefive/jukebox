@@ -1,13 +1,13 @@
 import { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import RNFS from 'react-native-fs';
+import fs from 'react-native-fs';
 
 import * as filesActions from '../actions/files';
 import * as downloadActions from '../actions/download';
 import * as constants from '../constants';
 
 const songsFolder
-= `${RNFS.CachesDirectoryPath}/${constants.SONG_FILES_FOLDER_NAME}/`;
+= `${fs.CachesDirectoryPath}/${constants.SONG_FILES_FOLDER_NAME}/`;
 
 class SongDownloadManager extends Component {
   componentDidUpdate() {
@@ -35,7 +35,7 @@ class SongDownloadManager extends Component {
     const { fileName, url } = song;
     const songName = songs[songId].name;
 
-    RNFS.downloadFile({
+    fs.downloadFile({
       fromUrl: url,
       toFile: `${songsFolder}${fileName}`
     })
@@ -44,8 +44,6 @@ class SongDownloadManager extends Component {
           dispatch(
             filesActions.updateSongFiles([fileName])
           );
-
-          alert(`download ${songName} succ`);
         }
         else {
           alert(`download ${songName} fail`);

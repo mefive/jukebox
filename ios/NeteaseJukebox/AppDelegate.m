@@ -8,8 +8,9 @@
  */
 
 #import "AppDelegate.h"
-
 #import "RCTRootView.h"
+
+#import <AVFoundation/AVFoundation.h>
 
 @implementation AppDelegate
 
@@ -45,7 +46,6 @@
    */
 
   // jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
-
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"NeteaseJukebox"
                                                initialProperties:nil
@@ -56,6 +56,7 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+
   return YES;
 }
 

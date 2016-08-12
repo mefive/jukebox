@@ -10,3 +10,17 @@ export function downloadSongDone(songId) {
     songId
   };
 }
+
+export function downloadImageStart(fileName) {
+  return {
+    type: types.DOWNLOAD_IMAGE_START,
+    fileName
+  };
+}
+
+export function downloadImageDone(fileName) {
+  return {
+    type: types.DOWNLOAD_IMAGE_DONE,
+    fileName
+  };
+}

@@ -20,6 +20,8 @@ export const DOWNLOAD_SONG_DONE = 'download_song_done';
 
 export const UPDATE_IMAGE_FILES = 'update_image_files';
 export const DOWNLOAD_IMAGE = 'download_image';
+export const DOWNLOAD_IMAGE_START = 'download_image_start';
+export const DOWNLOAD_IMAGE_DONE = 'download_image_done';
 
 // playlist
 export const UPDATE_PLAY_LIST = 'update_play_list';

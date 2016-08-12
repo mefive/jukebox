@@ -4,13 +4,14 @@ import {
   Text,
   ListView,
   TouchableOpacity,
+  Image,
   StyleSheet
 } from 'react-native';
 import Immutable from 'immutable';
 
 import { connect } from 'react-redux';
 import TabScenceView from '../../components/TabScenceView';
-import LazyImage from '../common/LazyImage';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import * as songsActions from '../../actions/songs';
 import * as playerActions from '../../actions/player';
@@ -61,6 +62,7 @@ class NewSongs extends TabScenceView {
 
   getSongs() {
     let { ids, songs, albums, artists } = this.props;
+    const { songFiles } = this.props;
 
     songs = songs.toJS();
     ids = ids.toJS();
@@ -74,9 +76,24 @@ class NewSongs extends TabScenceView {
       const album = albums[song.albumId];
       const artist = artists[song.artistIds[0]];
 
+      const file = songFiles.get(`${song.hMusicId}.mp3`);
+
+      let downloaded = false;
+      let downloading = false;
+
+      if (file) {
+        if (file.get('downloading')) {
+          downloading = true;
+        }
+        else {
+          downloaded = true;
+        }
+      }
+
       rt.push(Object.assign(
         song,
-        { picUrl: album.picUrl, picId: album.picId, albumName: album.name },
+        { picUrl: album.picUrl, picId: album.picId,
+          albumName: album.name, downloaded, downloading },
         { artist }
       ));
     }
@@ -121,7 +138,7 @@ class NewSongs extends TabScenceView {
 
   render() {
     const imageDimesion = 50;
-    const { imageFiles, dispatch } = this.props;
+    const { dispatch } = this.props;
     return (
       <View
         ref="container"
@@ -142,10 +159,10 @@ class NewSongs extends TabScenceView {
               <View
                 style={[styles.item]}
               >
-                <LazyImage
+                <Image
+                  source={{ uri: song.picUrl }}
                   url={song.picUrl}
                   picId={song.picId}
-                  imageFiles={imageFiles}
                   style={{ width: imageDimesion, height: imageDimesion }}
                   dispatch={dispatch}
                 />
@@ -159,7 +176,30 @@ class NewSongs extends TabScenceView {
                   <Text
                     style={{ color: color.textLight }}
                     numberOfLines={1}
-                  >{song.artist.name} - {song.albumName}</Text>
+                  >
+                    {song.downloaded
+                    ? (
+                      <Icon
+                        name="md-checkmark-circle" size={14}
+                        style={{
+                          color: color.primary
+                        }}
+                      />
+                    )
+                    : null}
+                    {song.downloading
+                    ? (
+                      <Icon
+                        name="md-cloud-download" size={14}
+                        style={{
+                          color: color.primary
+                        }}
+                      />
+                    )
+                    : null}
+                    {song.downloaded || song.downloading ? ' ' : ''}
+                    {song.artist.name} - {song.albumName}
+                  </Text>
                 </View>
               </View>
             </TouchableOpacity>
@@ -178,7 +218,7 @@ NewSongs.propTypes = {
   albums: PropTypes.object,
   artists: PropTypes.object,
   isCurrentView: PropTypes.bool,
-  imageFiles: PropTypes.instanceOf(Immutable.Map)
+  songFiles: PropTypes.instanceOf(Immutable.Map)
 };
 
 function mapStateToProps(state) {
@@ -188,7 +228,7 @@ function mapStateToProps(state) {
     songs: state.get('songs'),
     albums: state.get('albums'),
     artists: state.get('artists'),
-    imageFiles: state.get('imageFiles')
+    songFiles: state.get('songFiles')
   };
 }
 

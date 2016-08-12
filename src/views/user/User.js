@@ -12,6 +12,10 @@ const CARD_MARGIN = 0;
 const CARD_WIDTH = Dimensions.get('window').width - (CARD_MARGIN + CARD_PREVIEW_WIDTH) * 2;
 
 class User extends Component {
+  componentDidUpdate() {
+    console.log('');
+  }
+
   render() {
     const { songId } = this.props;
     const playlist = this.props.playlist.toJS();
