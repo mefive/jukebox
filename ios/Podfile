@@ -10,7 +10,6 @@ target 'NeteaseJukebox' do
   target 'NeteaseJukeboxTests' do
     inherit! :search_paths
     # Pods for testing
-    pod 'StreamingKit'
   end
 
 end
