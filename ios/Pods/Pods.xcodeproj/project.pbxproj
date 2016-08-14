@@ -1,0 +1,410 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1734540DF48075E929D22919EE79520C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		213C9CAA8211290F8AD1B271FDA68247 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		9B0D36F9BBE80B9C5C79AD4CB2D1EA0C /* Pods-NeteaseJukebox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBF9F134283AEF534A38082B5F9F9E5 /* Pods-NeteaseJukebox-dummy.m */; };
+		BE5A9EE4C82944511C9422A73A8EB76B /* Pods-NeteaseJukeboxTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CC530475160E9B53CF6C91418E2F28 /* Pods-NeteaseJukeboxTests-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		05C182963263FD7BE2BA9E046A504DED /* Pods-NeteaseJukeboxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NeteaseJukeboxTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1586DB3621F53F9B3768B92BA44ABA45 /* Pods-NeteaseJukeboxTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NeteaseJukeboxTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		1C8CFF4388AFA2F5CDF53B5E072030E8 /* Pods-NeteaseJukeboxTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NeteaseJukeboxTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		71CC530475160E9B53CF6C91418E2F28 /* Pods-NeteaseJukeboxTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NeteaseJukeboxTests-dummy.m"; sourceTree = "<group>"; };
+		74D0296C1FF586D72C4B27CE79379B89 /* libPods-NeteaseJukebox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NeteaseJukebox.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81FC28D6CDBCCE643EDA0C27CAFC00B6 /* Pods-NeteaseJukebox-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NeteaseJukebox-resources.sh"; sourceTree = "<group>"; };
+		8949A6D2DB7C07E6D8985F7F4926CFBD /* Pods-NeteaseJukeboxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NeteaseJukeboxTests.release.xcconfig"; sourceTree = "<group>"; };
+		8FBF9F134283AEF534A38082B5F9F9E5 /* Pods-NeteaseJukebox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NeteaseJukebox-dummy.m"; sourceTree = "<group>"; };
+		90FE235062DFE15D249D6823DA086D89 /* Pods-NeteaseJukebox-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NeteaseJukebox-acknowledgements.plist"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		AAEF9BC93CE0ADD922C24627AE64C06F /* Pods-NeteaseJukeboxTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NeteaseJukeboxTests-frameworks.sh"; sourceTree = "<group>"; };
+		B26E30BA2B4205167CE6600CC90DEDB9 /* Pods-NeteaseJukebox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NeteaseJukebox.debug.xcconfig"; sourceTree = "<group>"; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D4766DCC6F89D3CD2FDA39DF2C4FA434 /* Pods-NeteaseJukebox-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NeteaseJukebox-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E04C9C0E85DF60EFBBC4A8EDB1787C4B /* Pods-NeteaseJukeboxTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NeteaseJukeboxTests-resources.sh"; sourceTree = "<group>"; };
+		E7620B198D6E479B7FC2672D5D0AD24A /* libPods-NeteaseJukeboxTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NeteaseJukeboxTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E96EFC4DDCE3770BD728F83B0FA663D4 /* Pods-NeteaseJukebox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NeteaseJukebox.release.xcconfig"; sourceTree = "<group>"; };
+		FF6C941BD26126BB7984AD7E48B3C720 /* Pods-NeteaseJukebox-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NeteaseJukebox-frameworks.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		553498E937B3FC62F350068B3F4CB055 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				213C9CAA8211290F8AD1B271FDA68247 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F44C792AF0DC18B0BAF662AEA67A99EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1734540DF48075E929D22919EE79520C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		716E53817397F68229478DF0F822BB56 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9A5F0859A9E0A7A8DA865D31F801B4E8 /* Pods-NeteaseJukebox */,
+				9ED858F6450671035D6CF0F9CCEACDA8 /* Pods-NeteaseJukeboxTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				8D4913561E70C8636CCE1D686B412346 /* Products */,
+				716E53817397F68229478DF0F822BB56 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8D4913561E70C8636CCE1D686B412346 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				74D0296C1FF586D72C4B27CE79379B89 /* libPods-NeteaseJukebox.a */,
+				E7620B198D6E479B7FC2672D5D0AD24A /* libPods-NeteaseJukeboxTests.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A5F0859A9E0A7A8DA865D31F801B4E8 /* Pods-NeteaseJukebox */ = {
+			isa = PBXGroup;
+			children = (
+				D4766DCC6F89D3CD2FDA39DF2C4FA434 /* Pods-NeteaseJukebox-acknowledgements.markdown */,
+				90FE235062DFE15D249D6823DA086D89 /* Pods-NeteaseJukebox-acknowledgements.plist */,
+				8FBF9F134283AEF534A38082B5F9F9E5 /* Pods-NeteaseJukebox-dummy.m */,
+				FF6C941BD26126BB7984AD7E48B3C720 /* Pods-NeteaseJukebox-frameworks.sh */,
+				81FC28D6CDBCCE643EDA0C27CAFC00B6 /* Pods-NeteaseJukebox-resources.sh */,
+				B26E30BA2B4205167CE6600CC90DEDB9 /* Pods-NeteaseJukebox.debug.xcconfig */,
+				E96EFC4DDCE3770BD728F83B0FA663D4 /* Pods-NeteaseJukebox.release.xcconfig */,
+			);
+			name = "Pods-NeteaseJukebox";
+			path = "Target Support Files/Pods-NeteaseJukebox";
+			sourceTree = "<group>";
+		};
+		9ED858F6450671035D6CF0F9CCEACDA8 /* Pods-NeteaseJukeboxTests */ = {
+			isa = PBXGroup;
+			children = (
+				1C8CFF4388AFA2F5CDF53B5E072030E8 /* Pods-NeteaseJukeboxTests-acknowledgements.markdown */,
+				1586DB3621F53F9B3768B92BA44ABA45 /* Pods-NeteaseJukeboxTests-acknowledgements.plist */,
+				71CC530475160E9B53CF6C91418E2F28 /* Pods-NeteaseJukeboxTests-dummy.m */,
+				AAEF9BC93CE0ADD922C24627AE64C06F /* Pods-NeteaseJukeboxTests-frameworks.sh */,
+				E04C9C0E85DF60EFBBC4A8EDB1787C4B /* Pods-NeteaseJukeboxTests-resources.sh */,
+				05C182963263FD7BE2BA9E046A504DED /* Pods-NeteaseJukeboxTests.debug.xcconfig */,
+				8949A6D2DB7C07E6D8985F7F4926CFBD /* Pods-NeteaseJukeboxTests.release.xcconfig */,
+			);
+			name = "Pods-NeteaseJukeboxTests";
+			path = "Target Support Files/Pods-NeteaseJukeboxTests";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8CFDD2C87455FA42283A1621BF64D204 /* Pods-NeteaseJukebox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7089B40B26AD7E45BD5276AD138AA1E /* Build configuration list for PBXNativeTarget "Pods-NeteaseJukebox" */;
+			buildPhases = (
+				F7018CCA402AC18C7D20BA42C632AF33 /* Sources */,
+				F44C792AF0DC18B0BAF662AEA67A99EA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-NeteaseJukebox";
+			productName = "Pods-NeteaseJukebox";
+			productReference = 74D0296C1FF586D72C4B27CE79379B89 /* libPods-NeteaseJukebox.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E2ACD93F008D51C0D205536659226B68 /* Pods-NeteaseJukeboxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68BFF3AD634F93ABA7304D9E9336959D /* Build configuration list for PBXNativeTarget "Pods-NeteaseJukeboxTests" */;
+			buildPhases = (
+				86EF205B9425C2BABD9D188621A79196 /* Sources */,
+				553498E937B3FC62F350068B3F4CB055 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-NeteaseJukeboxTests";
+			productName = "Pods-NeteaseJukeboxTests";
+			productReference = E7620B198D6E479B7FC2672D5D0AD24A /* libPods-NeteaseJukeboxTests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 8D4913561E70C8636CCE1D686B412346 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8CFDD2C87455FA42283A1621BF64D204 /* Pods-NeteaseJukebox */,
+				E2ACD93F008D51C0D205536659226B68 /* Pods-NeteaseJukeboxTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		86EF205B9425C2BABD9D188621A79196 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE5A9EE4C82944511C9422A73A8EB76B /* Pods-NeteaseJukeboxTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7018CCA402AC18C7D20BA42C632AF33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B0D36F9BBE80B9C5C79AD4CB2D1EA0C /* Pods-NeteaseJukebox-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0A89A04208CAD29630C5411C3FE126BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E96EFC4DDCE3770BD728F83B0FA663D4 /* Pods-NeteaseJukebox.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		3FA2475660FFC880302AD18E29B2E5FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		5C1EBC9AB2C213EB4E1CA43BF9390D97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B26E30BA2B4205167CE6600CC90DEDB9 /* Pods-NeteaseJukebox.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		7D2FEB8222FAEEE4028B6CC4B05275A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05C182963263FD7BE2BA9E046A504DED /* Pods-NeteaseJukeboxTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		81A4F129D2F7EA4BF134B0ADD6E47D2D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8949A6D2DB7C07E6D8985F7F4926CFBD /* Pods-NeteaseJukeboxTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		F325026B55060D3B22BEC0BAB5FA7344 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FA2475660FFC880302AD18E29B2E5FC /* Debug */,
+				F325026B55060D3B22BEC0BAB5FA7344 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		68BFF3AD634F93ABA7304D9E9336959D /* Build configuration list for PBXNativeTarget "Pods-NeteaseJukeboxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D2FEB8222FAEEE4028B6CC4B05275A9 /* Debug */,
+				81A4F129D2F7EA4BF134B0ADD6E47D2D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7089B40B26AD7E45BD5276AD138AA1E /* Build configuration list for PBXNativeTarget "Pods-NeteaseJukebox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C1EBC9AB2C213EB4E1CA43BF9390D97 /* Debug */,
+				0A89A04208CAD29630C5411C3FE126BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
