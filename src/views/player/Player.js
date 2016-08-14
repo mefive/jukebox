@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import {
-  View,
-  NativeModules
+  View
 } from 'react-native';
 
 import { connect } from 'react-redux';
@@ -12,7 +11,6 @@ import RNFS from 'react-native-fs';
 import * as constants from '../../constants';
 import * as filesActions from '../../actions/files';
 import * as playerActions from '../../actions/player';
-const { AudioPlayerManager } = NativeModules;
 
 const songsFolder
 = `${RNFS.CachesDirectoryPath}/${constants.SONG_FILES_FOLDER_NAME}/`;
@@ -23,22 +21,11 @@ class Player extends Component {
 
     this.setDuration = this.setDuration.bind(this);
     this.setCurrentTime = this.setCurrentTime.bind(this);
-
-    AudioPlayerManager.setPlayBack();
   }
 
   shouldComponentUpdate(nextProps) {
     return nextProps.songId !== this.props.songId
       || nextProps.status !== this.props.status;
-  }
-
-  componentWillUpdate(nextProps) {
-    if (nextProps.status === constants.PLAYER_STATUS_PLAYING
-      && this.props.status !== constants.PLAYER_STATUS_PLAYING
-    ) {
-      console.log('setPlayBack');
-      AudioPlayerManager.setPlayBack();
-    }
   }
 
   getSong(songId, songFiles) {

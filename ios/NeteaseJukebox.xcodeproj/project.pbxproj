@@ -24,10 +24,11 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		201F6CE81D55D14F00BB260C /* libART.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 201F6CD91D55D11100BB260C /* libART.a */; };
-		20C7E5221D5C9E6F000B20FE /* AudioPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C7E5211D5C9E6F000B20FE /* AudioPlayerManager.m */; };
 		2E2875DD580D443098F40C6E /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F41CB80E96E4623B3491978 /* MaterialIcons.ttf */; };
+		32843E69FC4F1269CA7B2866 /* libPods-NeteaseJukebox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 944F1CCCE10A55D8983AD4EA /* libPods-NeteaseJukebox.a */; };
 		362A2D8090C24693B0E109C5 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D6C552A703E048318D989C40 /* Ionicons.ttf */; };
 		5F25B45719BB466993C168A7 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47CA514AFAB24FA2BFDD1108 /* EvilIcons.ttf */; };
+		68669A5A4E41C98D59A8E219 /* libPods-NeteaseJukeboxTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E50EF8E9468CF6CF4812C3F /* libPods-NeteaseJukeboxTests.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		954E62A621F04C27999961CC /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D17A91E2A0D34790A5FCEFB8 /* Zocial.ttf */; };
 		9C82229160AB4DF8A6C3CDB9 /* libRCTVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39CDA5F0F6D941C48AB636FA /* libRCTVideo.a */; };
@@ -175,18 +176,21 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		201F6CD41D55D11100BB260C /* ART.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ART.xcodeproj; path = "../node_modules/react-native/Libraries/ART/ART.xcodeproj"; sourceTree = "<group>"; };
 		207085D0316A4C25BAE02B75 /* RNBlur.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNBlur.xcodeproj; path = "../node_modules/react-native-blur/ios/RNBlur.xcodeproj"; sourceTree = "<group>"; };
-		20C7E5201D5C9E6F000B20FE /* AudioPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioPlayerManager.h; sourceTree = "<group>"; };
-		20C7E5211D5C9E6F000B20FE /* AudioPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerManager.m; sourceTree = "<group>"; };
+		25F27EAE8EE1EA505CF5D012 /* Pods-NeteaseJukeboxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeteaseJukeboxTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NeteaseJukeboxTests/Pods-NeteaseJukeboxTests.debug.xcconfig"; sourceTree = "<group>"; };
 		29E52A4D68BD4AE5B5A89E77 /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
 		39CDA5F0F6D941C48AB636FA /* libRCTVideo.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTVideo.a; sourceTree = "<group>"; };
 		47CA514AFAB24FA2BFDD1108 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		4E50EF8E9468CF6CF4812C3F /* libPods-NeteaseJukeboxTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NeteaseJukeboxTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F41CB80E96E4623B3491978 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		5487F96273B8DCB833FA62B6 /* Pods-NeteaseJukebox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeteaseJukebox.release.xcconfig"; path = "Pods/Target Support Files/Pods-NeteaseJukebox/Pods-NeteaseJukebox.release.xcconfig"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		79DF28F59B314C3BBC2D6D59 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		7EFF523C252443FAB636A1CB /* RCTVideo.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTVideo.xcodeproj; path = "../node_modules/react-native-video/RCTVideo.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		8C98572BCD1C4DF8BF7FE825 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		8CD0AD6490794D61A2FD6CF8 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		944F1CCCE10A55D8983AD4EA /* libPods-NeteaseJukebox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NeteaseJukebox.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94A11581B14DE5C181E1D677 /* Pods-NeteaseJukebox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeteaseJukebox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NeteaseJukebox/Pods-NeteaseJukebox.debug.xcconfig"; sourceTree = "<group>"; };
 		9CAF428E69BD493391EEA44B /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
 		D17A91E2A0D34790A5FCEFB8 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		D6C552A703E048318D989C40 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
@@ -194,6 +198,7 @@
 		E648AF7164664C38B6BE8E3F /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		F15DD52865DA483C8407CF11 /* libRNBlur.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNBlur.a; sourceTree = "<group>"; };
 		FB0A73B284C94BBB817AFA81 /* libRNFS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNFS.a; sourceTree = "<group>"; };
+		FC590D8C8138DE499577F982 /* Pods-NeteaseJukeboxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeteaseJukeboxTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NeteaseJukeboxTests/Pods-NeteaseJukeboxTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +206,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68669A5A4E41C98D59A8E219 /* libPods-NeteaseJukeboxTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +229,7 @@
 				D26398F4AB1A4B3190973064 /* libRNBlur.a in Frameworks */,
 				E2E7864B088A4298A0C889D6 /* libRNFS.a in Frameworks */,
 				9C82229160AB4DF8A6C3CDB9 /* libRCTVideo.a in Frameworks */,
+				32843E69FC4F1269CA7B2866 /* libPods-NeteaseJukebox.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,8 +319,6 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
-				20C7E5201D5C9E6F000B20FE /* AudioPlayerManager.h */,
-				20C7E5211D5C9E6F000B20FE /* AudioPlayerManager.m */,
 			);
 			name = NeteaseJukebox;
 			sourceTree = "<group>";
@@ -366,6 +371,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		693E4C2B2F3B0A1C86692A8D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				944F1CCCE10A55D8983AD4EA /* libPods-NeteaseJukebox.a */,
+				4E50EF8E9468CF6CF4812C3F /* libPods-NeteaseJukeboxTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		78C398B11ACF4ADC00677621 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -412,6 +426,8 @@
 				00E356EF1AD99517003FC87E /* NeteaseJukeboxTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				A7F3C36CEA4F4B2485770C45 /* Resources */,
+				96D72E1086C18FE6399F74CA /* Pods */,
+				693E4C2B2F3B0A1C86692A8D /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -424,6 +440,17 @@
 				00E356EE1AD99517003FC87E /* NeteaseJukeboxTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		96D72E1086C18FE6399F74CA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				94A11581B14DE5C181E1D677 /* Pods-NeteaseJukebox.debug.xcconfig */,
+				5487F96273B8DCB833FA62B6 /* Pods-NeteaseJukebox.release.xcconfig */,
+				25F27EAE8EE1EA505CF5D012 /* Pods-NeteaseJukeboxTests.debug.xcconfig */,
+				FC590D8C8138DE499577F982 /* Pods-NeteaseJukeboxTests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		A7F3C36CEA4F4B2485770C45 /* Resources */ = {
@@ -448,9 +475,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "NeteaseJukeboxTests" */;
 			buildPhases = (
+				EB64406A956BE7CAE347C29A /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				370DC0C64E85E0FF00EAB70E /* [CP] Embed Pods Frameworks */,
+				66D61B8F5C8031C7DCC76FC1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -466,10 +496,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "NeteaseJukebox" */;
 			buildPhases = (
+				66DB5E59BEC62BA8B8ED846F /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				C1146E3C997AA9BC027CE8BF /* [CP] Embed Pods Frameworks */,
+				5F2BF21B79A7FEF381D66AB3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -726,6 +759,96 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/packager/react-native-xcode.sh";
 		};
+		370DC0C64E85E0FF00EAB70E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NeteaseJukeboxTests/Pods-NeteaseJukeboxTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F2BF21B79A7FEF381D66AB3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NeteaseJukebox/Pods-NeteaseJukebox-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66D61B8F5C8031C7DCC76FC1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NeteaseJukeboxTests/Pods-NeteaseJukeboxTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66DB5E59BEC62BA8B8ED846F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C1146E3C997AA9BC027CE8BF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NeteaseJukebox/Pods-NeteaseJukebox-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB64406A956BE7CAE347C29A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -743,7 +866,6 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				20C7E5221D5C9E6F000B20FE /* AudioPlayerManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -772,6 +894,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25F27EAE8EE1EA505CF5D012 /* Pods-NeteaseJukeboxTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -796,6 +919,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC590D8C8138DE499577F982 /* Pods-NeteaseJukeboxTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -817,6 +941,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94A11581B14DE5C181E1D677 /* Pods-NeteaseJukebox.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEAD_CODE_STRIPPING = NO;
@@ -834,6 +959,7 @@
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
+					"$(inherited)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = NeteaseJukebox;
@@ -842,6 +968,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5487F96273B8DCB833FA62B6 /* Pods-NeteaseJukebox.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				HEADER_SEARCH_PATHS = (
@@ -858,6 +985,7 @@
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
+					"$(inherited)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = NeteaseJukebox;

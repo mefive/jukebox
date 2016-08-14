@@ -1,0 +1,648 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1734540DF48075E929D22919EE79520C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E901389EA02ACC9AF6A580A51F072D3 /* Foundation.framework */; };
+		1F074358693FEF3B812B875FEF0A0E3E /* STKQueueEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 7462A1565CCD7C88146D4D8C7EF6D4F4 /* STKQueueEntry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24DC2F259B251562DA2C5F2457C763C3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7CEF886328CA78C490429E1B00F7122 /* SystemConfiguration.framework */; };
+		2F325C7C195670EA817E4FD6513774D2 /* STKDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 11763C021B1761AF10F7CA13CB8BB052 /* STKDataSource.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		3090627084C4C9A0E1A1450B89DDFB14 /* STKQueueEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A0D7124765FA8419151543DEFA49E2 /* STKQueueEntry.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		373F8ADCC8CB3A997B0056885175085E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E901389EA02ACC9AF6A580A51F072D3 /* Foundation.framework */; };
+		4C4058EA45960C8D3D71541C2CE55898 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B3F2BAF355C430FB1ADDFF2DC7B26E3 /* AudioToolbox.framework */; };
+		552D73BE2F9BCE5876F5C337A7A79E62 /* STKCoreFoundationDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 91621EBA09E97039713F96A7BBC10A47 /* STKCoreFoundationDataSource.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		584797746640DC486BD48D23AAF46146 /* STKDataSourceWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = C088807C34C655BEF920AF803E1426B8 /* STKDataSourceWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		744DFE847F5607060E5ABA62F761902F /* STKAutoRecoveringHTTPDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF8C05345E5055C917166FC6F4F69AF /* STKAutoRecoveringHTTPDataSource.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		7E12D3AC71303A6AAA1EF0E788897370 /* STKLocalFileDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FF11063AF72909AB74B517B9627C641 /* STKLocalFileDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84CE8A29510AD7F8C30731028AE7C927 /* STKCoreFoundationDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 50B2FA99CF927A1704C710DDE3555E57 /* STKCoreFoundationDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		863199C185B4086F98C133E5AE3FD75C /* STKAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD0ADDC21D9E5BD0E8FE28B8626B88E /* STKAudioPlayer.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		8865277F9D7B4F4E6DB24AEEEF369D2C /* STKDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C3989523AF1F86FFB40DCE953FD6EB2 /* STKDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8E630040C1AFB20F4689510C8FEDB074 /* Pods-NeteaseJukeboxTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CC530475160E9B53CF6C91418E2F28 /* Pods-NeteaseJukeboxTests-dummy.m */; };
+		903EA36F6FF6B42B6453ACE4C5878315 /* STKAudioPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FC1F9C983CFB36C8906CC65DF667F66 /* STKAudioPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9B0D36F9BBE80B9C5C79AD4CB2D1EA0C /* Pods-NeteaseJukebox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBF9F134283AEF534A38082B5F9F9E5 /* Pods-NeteaseJukebox-dummy.m */; };
+		9B34060AF25706A9EDC32866B05CAF22 /* STKDataSourceWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D480870EA778FB11F04B980F8A6BDBD /* STKDataSourceWrapper.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A5C23BF9DD81C094C9EB9E4422884F9E /* NSMutableArray+STKAudioPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 07E76151F2E0078308EBB02A4482A89F /* NSMutableArray+STKAudioPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B08B0801857CA2764EFBCCAE151BDB3F /* STKHTTPDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 728B2384F0E66466E38F737002C1A62B /* STKHTTPDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9CD4A17F1D2151DBB5F4A7F5011F350 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E901389EA02ACC9AF6A580A51F072D3 /* Foundation.framework */; };
+		CD0BF9D19B405D99E9A6C5B7E13B9D2A /* NSMutableArray+STKAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9665E2659378F533AAED0C25EBFDE3 /* NSMutableArray+STKAudioPlayer.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		DD2BFAA423ED0D039504E1FD0881BDE4 /* STKLocalFileDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E04A82CF68EC169EC0669FFAD1B427E /* STKLocalFileDataSource.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		E41BCFBD95613B66DDE664904D21008B /* STKHTTPDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E90A69DB95D7FC25D1112FD07401CF58 /* STKHTTPDataSource.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F397FB006888D98CAFE4DA5FA53896E4 /* STKAutoRecoveringHTTPDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = EB6E46BF5E568D736260D1A17C1718E0 /* STKAutoRecoveringHTTPDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F720CC2E8B5D6FA3D21D044979F5BAC3 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2EE02C82F0738B46F0B5D88DCC4714 /* CoreFoundation.framework */; };
+		FA06CF42D6166DDADA7EEE330CC158F6 /* StreamingKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE553C08A5A4C10FFF3941C82D730CB /* StreamingKit-dummy.m */; };
+		FABE74743C0F8DD629437519CFAADCB6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4961FDA37C5D3F3C7AACCB0A93FB73F4 /* CFNetwork.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4D5F63DF4A99912B414487927A1BF0CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92148C7BB493534BED89E3E84477AB35;
+			remoteInfo = StreamingKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05C182963263FD7BE2BA9E046A504DED /* Pods-NeteaseJukeboxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NeteaseJukeboxTests.debug.xcconfig"; sourceTree = "<group>"; };
+		07E76151F2E0078308EBB02A4482A89F /* NSMutableArray+STKAudioPlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+STKAudioPlayer.h"; path = "StreamingKit/StreamingKit/NSMutableArray+STKAudioPlayer.h"; sourceTree = "<group>"; };
+		11763C021B1761AF10F7CA13CB8BB052 /* STKDataSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STKDataSource.m; path = StreamingKit/StreamingKit/STKDataSource.m; sourceTree = "<group>"; };
+		1586DB3621F53F9B3768B92BA44ABA45 /* Pods-NeteaseJukeboxTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NeteaseJukeboxTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		1C8CFF4388AFA2F5CDF53B5E072030E8 /* Pods-NeteaseJukeboxTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NeteaseJukeboxTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3C3989523AF1F86FFB40DCE953FD6EB2 /* STKDataSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STKDataSource.h; path = StreamingKit/StreamingKit/STKDataSource.h; sourceTree = "<group>"; };
+		3C7CEF33E0F4A2893053484F5C0AEAD4 /* libStreamingKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStreamingKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4961FDA37C5D3F3C7AACCB0A93FB73F4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		4F9665E2659378F533AAED0C25EBFDE3 /* NSMutableArray+STKAudioPlayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+STKAudioPlayer.m"; path = "StreamingKit/StreamingKit/NSMutableArray+STKAudioPlayer.m"; sourceTree = "<group>"; };
+		50B2FA99CF927A1704C710DDE3555E57 /* STKCoreFoundationDataSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STKCoreFoundationDataSource.h; path = StreamingKit/StreamingKit/STKCoreFoundationDataSource.h; sourceTree = "<group>"; };
+		533055014681E2CBA1FFA3B5925C67CB /* libPods-NeteaseJukebox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NeteaseJukebox.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D480870EA778FB11F04B980F8A6BDBD /* STKDataSourceWrapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STKDataSourceWrapper.m; path = StreamingKit/StreamingKit/STKDataSourceWrapper.m; sourceTree = "<group>"; };
+		5E04A82CF68EC169EC0669FFAD1B427E /* STKLocalFileDataSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STKLocalFileDataSource.m; path = StreamingKit/StreamingKit/STKLocalFileDataSource.m; sourceTree = "<group>"; };
+		5E901389EA02ACC9AF6A580A51F072D3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6FC1F9C983CFB36C8906CC65DF667F66 /* STKAudioPlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STKAudioPlayer.h; path = StreamingKit/StreamingKit/STKAudioPlayer.h; sourceTree = "<group>"; };
+		6FF11063AF72909AB74B517B9627C641 /* STKLocalFileDataSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STKLocalFileDataSource.h; path = StreamingKit/StreamingKit/STKLocalFileDataSource.h; sourceTree = "<group>"; };
+		71CC530475160E9B53CF6C91418E2F28 /* Pods-NeteaseJukeboxTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NeteaseJukeboxTests-dummy.m"; sourceTree = "<group>"; };
+		71FCD4F053655BCC8BDD14DC37B29A43 /* libPods-NeteaseJukeboxTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NeteaseJukeboxTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		728B2384F0E66466E38F737002C1A62B /* STKHTTPDataSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STKHTTPDataSource.h; path = StreamingKit/StreamingKit/STKHTTPDataSource.h; sourceTree = "<group>"; };
+		7462A1565CCD7C88146D4D8C7EF6D4F4 /* STKQueueEntry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STKQueueEntry.h; path = StreamingKit/StreamingKit/STKQueueEntry.h; sourceTree = "<group>"; };
+		81FC28D6CDBCCE643EDA0C27CAFC00B6 /* Pods-NeteaseJukebox-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NeteaseJukebox-resources.sh"; sourceTree = "<group>"; };
+		88A0D7124765FA8419151543DEFA49E2 /* STKQueueEntry.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STKQueueEntry.m; path = StreamingKit/StreamingKit/STKQueueEntry.m; sourceTree = "<group>"; };
+		8949A6D2DB7C07E6D8985F7F4926CFBD /* Pods-NeteaseJukeboxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NeteaseJukeboxTests.release.xcconfig"; sourceTree = "<group>"; };
+		8FBF9F134283AEF534A38082B5F9F9E5 /* Pods-NeteaseJukebox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NeteaseJukebox-dummy.m"; sourceTree = "<group>"; };
+		90FE235062DFE15D249D6823DA086D89 /* Pods-NeteaseJukebox-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NeteaseJukebox-acknowledgements.plist"; sourceTree = "<group>"; };
+		91621EBA09E97039713F96A7BBC10A47 /* STKCoreFoundationDataSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STKCoreFoundationDataSource.m; path = StreamingKit/StreamingKit/STKCoreFoundationDataSource.m; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9B3F2BAF355C430FB1ADDFF2DC7B26E3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		AAEF9BC93CE0ADD922C24627AE64C06F /* Pods-NeteaseJukeboxTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NeteaseJukeboxTests-frameworks.sh"; sourceTree = "<group>"; };
+		AD2EE02C82F0738B46F0B5D88DCC4714 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		AFE553C08A5A4C10FFF3941C82D730CB /* StreamingKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "StreamingKit-dummy.m"; sourceTree = "<group>"; };
+		B26E30BA2B4205167CE6600CC90DEDB9 /* Pods-NeteaseJukebox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NeteaseJukebox.debug.xcconfig"; sourceTree = "<group>"; };
+		C088807C34C655BEF920AF803E1426B8 /* STKDataSourceWrapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STKDataSourceWrapper.h; path = StreamingKit/StreamingKit/STKDataSourceWrapper.h; sourceTree = "<group>"; };
+		CCD0ADDC21D9E5BD0E8FE28B8626B88E /* STKAudioPlayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STKAudioPlayer.m; path = StreamingKit/StreamingKit/STKAudioPlayer.m; sourceTree = "<group>"; };
+		D4766DCC6F89D3CD2FDA39DF2C4FA434 /* Pods-NeteaseJukebox-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NeteaseJukebox-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D680C21100D052BF718E97DCD897051F /* StreamingKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StreamingKit.xcconfig; sourceTree = "<group>"; };
+		DEF8C05345E5055C917166FC6F4F69AF /* STKAutoRecoveringHTTPDataSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STKAutoRecoveringHTTPDataSource.m; path = StreamingKit/StreamingKit/STKAutoRecoveringHTTPDataSource.m; sourceTree = "<group>"; };
+		E04C9C0E85DF60EFBBC4A8EDB1787C4B /* Pods-NeteaseJukeboxTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NeteaseJukeboxTests-resources.sh"; sourceTree = "<group>"; };
+		E4F28301A7F9CFC2A2B872F5C146AAF4 /* StreamingKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StreamingKit-prefix.pch"; sourceTree = "<group>"; };
+		E7CEF886328CA78C490429E1B00F7122 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		E90A69DB95D7FC25D1112FD07401CF58 /* STKHTTPDataSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STKHTTPDataSource.m; path = StreamingKit/StreamingKit/STKHTTPDataSource.m; sourceTree = "<group>"; };
+		E96EFC4DDCE3770BD728F83B0FA663D4 /* Pods-NeteaseJukebox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NeteaseJukebox.release.xcconfig"; sourceTree = "<group>"; };
+		EB6E46BF5E568D736260D1A17C1718E0 /* STKAutoRecoveringHTTPDataSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STKAutoRecoveringHTTPDataSource.h; path = StreamingKit/StreamingKit/STKAutoRecoveringHTTPDataSource.h; sourceTree = "<group>"; };
+		FF6C941BD26126BB7984AD7E48B3C720 /* Pods-NeteaseJukebox-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NeteaseJukebox-frameworks.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A0095E1C4AE4454E678446CB4F15A1CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C4058EA45960C8D3D71541C2CE55898 /* AudioToolbox.framework in Frameworks */,
+				FABE74743C0F8DD629437519CFAADCB6 /* CFNetwork.framework in Frameworks */,
+				F720CC2E8B5D6FA3D21D044979F5BAC3 /* CoreFoundation.framework in Frameworks */,
+				373F8ADCC8CB3A997B0056885175085E /* Foundation.framework in Frameworks */,
+				24DC2F259B251562DA2C5F2457C763C3 /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F44C792AF0DC18B0BAF662AEA67A99EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1734540DF48075E929D22919EE79520C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5C31042EEC5EA93116504775DED1D89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9CD4A17F1D2151DBB5F4A7F5011F350 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		003241FF73248B6E4FCB13D1A9878AC0 /* StreamingKit */ = {
+			isa = PBXGroup;
+			children = (
+				07E76151F2E0078308EBB02A4482A89F /* NSMutableArray+STKAudioPlayer.h */,
+				4F9665E2659378F533AAED0C25EBFDE3 /* NSMutableArray+STKAudioPlayer.m */,
+				6FC1F9C983CFB36C8906CC65DF667F66 /* STKAudioPlayer.h */,
+				CCD0ADDC21D9E5BD0E8FE28B8626B88E /* STKAudioPlayer.m */,
+				EB6E46BF5E568D736260D1A17C1718E0 /* STKAutoRecoveringHTTPDataSource.h */,
+				DEF8C05345E5055C917166FC6F4F69AF /* STKAutoRecoveringHTTPDataSource.m */,
+				50B2FA99CF927A1704C710DDE3555E57 /* STKCoreFoundationDataSource.h */,
+				91621EBA09E97039713F96A7BBC10A47 /* STKCoreFoundationDataSource.m */,
+				3C3989523AF1F86FFB40DCE953FD6EB2 /* STKDataSource.h */,
+				11763C021B1761AF10F7CA13CB8BB052 /* STKDataSource.m */,
+				C088807C34C655BEF920AF803E1426B8 /* STKDataSourceWrapper.h */,
+				5D480870EA778FB11F04B980F8A6BDBD /* STKDataSourceWrapper.m */,
+				728B2384F0E66466E38F737002C1A62B /* STKHTTPDataSource.h */,
+				E90A69DB95D7FC25D1112FD07401CF58 /* STKHTTPDataSource.m */,
+				6FF11063AF72909AB74B517B9627C641 /* STKLocalFileDataSource.h */,
+				5E04A82CF68EC169EC0669FFAD1B427E /* STKLocalFileDataSource.m */,
+				7462A1565CCD7C88146D4D8C7EF6D4F4 /* STKQueueEntry.h */,
+				88A0D7124765FA8419151543DEFA49E2 /* STKQueueEntry.m */,
+				A699C9F0FC17D324B90D5E5566BF132B /* Support Files */,
+			);
+			path = StreamingKit;
+			sourceTree = "<group>";
+		};
+		16FC6FB26258D52DFCFF876A75EF40FC /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				9B3F2BAF355C430FB1ADDFF2DC7B26E3 /* AudioToolbox.framework */,
+				4961FDA37C5D3F3C7AACCB0A93FB73F4 /* CFNetwork.framework */,
+				AD2EE02C82F0738B46F0B5D88DCC4714 /* CoreFoundation.framework */,
+				5E901389EA02ACC9AF6A580A51F072D3 /* Foundation.framework */,
+				E7CEF886328CA78C490429E1B00F7122 /* SystemConfiguration.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		1A107B8531DEB67B42682B706DF43856 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				533055014681E2CBA1FFA3B5925C67CB /* libPods-NeteaseJukebox.a */,
+				71FCD4F053655BCC8BDD14DC37B29A43 /* libPods-NeteaseJukeboxTests.a */,
+				3C7CEF33E0F4A2893053484F5C0AEAD4 /* libStreamingKit.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		20B56609144CE204DFA8221F742B2D76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16FC6FB26258D52DFCFF876A75EF40FC /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		55E1F0F4226335DD634B98B88E86D0F9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				003241FF73248B6E4FCB13D1A9878AC0 /* StreamingKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		716E53817397F68229478DF0F822BB56 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9A5F0859A9E0A7A8DA865D31F801B4E8 /* Pods-NeteaseJukebox */,
+				9ED858F6450671035D6CF0F9CCEACDA8 /* Pods-NeteaseJukeboxTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				20B56609144CE204DFA8221F742B2D76 /* Frameworks */,
+				55E1F0F4226335DD634B98B88E86D0F9 /* Pods */,
+				1A107B8531DEB67B42682B706DF43856 /* Products */,
+				716E53817397F68229478DF0F822BB56 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		9A5F0859A9E0A7A8DA865D31F801B4E8 /* Pods-NeteaseJukebox */ = {
+			isa = PBXGroup;
+			children = (
+				D4766DCC6F89D3CD2FDA39DF2C4FA434 /* Pods-NeteaseJukebox-acknowledgements.markdown */,
+				90FE235062DFE15D249D6823DA086D89 /* Pods-NeteaseJukebox-acknowledgements.plist */,
+				8FBF9F134283AEF534A38082B5F9F9E5 /* Pods-NeteaseJukebox-dummy.m */,
+				FF6C941BD26126BB7984AD7E48B3C720 /* Pods-NeteaseJukebox-frameworks.sh */,
+				81FC28D6CDBCCE643EDA0C27CAFC00B6 /* Pods-NeteaseJukebox-resources.sh */,
+				B26E30BA2B4205167CE6600CC90DEDB9 /* Pods-NeteaseJukebox.debug.xcconfig */,
+				E96EFC4DDCE3770BD728F83B0FA663D4 /* Pods-NeteaseJukebox.release.xcconfig */,
+			);
+			name = "Pods-NeteaseJukebox";
+			path = "Target Support Files/Pods-NeteaseJukebox";
+			sourceTree = "<group>";
+		};
+		9ED858F6450671035D6CF0F9CCEACDA8 /* Pods-NeteaseJukeboxTests */ = {
+			isa = PBXGroup;
+			children = (
+				1C8CFF4388AFA2F5CDF53B5E072030E8 /* Pods-NeteaseJukeboxTests-acknowledgements.markdown */,
+				1586DB3621F53F9B3768B92BA44ABA45 /* Pods-NeteaseJukeboxTests-acknowledgements.plist */,
+				71CC530475160E9B53CF6C91418E2F28 /* Pods-NeteaseJukeboxTests-dummy.m */,
+				AAEF9BC93CE0ADD922C24627AE64C06F /* Pods-NeteaseJukeboxTests-frameworks.sh */,
+				E04C9C0E85DF60EFBBC4A8EDB1787C4B /* Pods-NeteaseJukeboxTests-resources.sh */,
+				05C182963263FD7BE2BA9E046A504DED /* Pods-NeteaseJukeboxTests.debug.xcconfig */,
+				8949A6D2DB7C07E6D8985F7F4926CFBD /* Pods-NeteaseJukeboxTests.release.xcconfig */,
+			);
+			name = "Pods-NeteaseJukeboxTests";
+			path = "Target Support Files/Pods-NeteaseJukeboxTests";
+			sourceTree = "<group>";
+		};
+		A699C9F0FC17D324B90D5E5566BF132B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D680C21100D052BF718E97DCD897051F /* StreamingKit.xcconfig */,
+				AFE553C08A5A4C10FFF3941C82D730CB /* StreamingKit-dummy.m */,
+				E4F28301A7F9CFC2A2B872F5C146AAF4 /* StreamingKit-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/StreamingKit";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		CD106E37C0D8A7DF69358FF380070CD7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5C23BF9DD81C094C9EB9E4422884F9E /* NSMutableArray+STKAudioPlayer.h in Headers */,
+				903EA36F6FF6B42B6453ACE4C5878315 /* STKAudioPlayer.h in Headers */,
+				F397FB006888D98CAFE4DA5FA53896E4 /* STKAutoRecoveringHTTPDataSource.h in Headers */,
+				84CE8A29510AD7F8C30731028AE7C927 /* STKCoreFoundationDataSource.h in Headers */,
+				8865277F9D7B4F4E6DB24AEEEF369D2C /* STKDataSource.h in Headers */,
+				584797746640DC486BD48D23AAF46146 /* STKDataSourceWrapper.h in Headers */,
+				B08B0801857CA2764EFBCCAE151BDB3F /* STKHTTPDataSource.h in Headers */,
+				7E12D3AC71303A6AAA1EF0E788897370 /* STKLocalFileDataSource.h in Headers */,
+				1F074358693FEF3B812B875FEF0A0E3E /* STKQueueEntry.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		765B215423CED765A30DBC28F7493C5A /* Pods-NeteaseJukeboxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87BF76E0309AB83077C116CFD15AA5EB /* Build configuration list for PBXNativeTarget "Pods-NeteaseJukeboxTests" */;
+			buildPhases = (
+				D677EE92D5212CB3A3A0EA5E17435D6F /* Sources */,
+				F5C31042EEC5EA93116504775DED1D89 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4D5B998EC07A9BA0B7698A7829F7BF34 /* PBXTargetDependency */,
+			);
+			name = "Pods-NeteaseJukeboxTests";
+			productName = "Pods-NeteaseJukeboxTests";
+			productReference = 71FCD4F053655BCC8BDD14DC37B29A43 /* libPods-NeteaseJukeboxTests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		8CFDD2C87455FA42283A1621BF64D204 /* Pods-NeteaseJukebox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7089B40B26AD7E45BD5276AD138AA1E /* Build configuration list for PBXNativeTarget "Pods-NeteaseJukebox" */;
+			buildPhases = (
+				F7018CCA402AC18C7D20BA42C632AF33 /* Sources */,
+				F44C792AF0DC18B0BAF662AEA67A99EA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-NeteaseJukebox";
+			productName = "Pods-NeteaseJukebox";
+			productReference = 533055014681E2CBA1FFA3B5925C67CB /* libPods-NeteaseJukebox.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		92148C7BB493534BED89E3E84477AB35 /* StreamingKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F48DF7989A7BC4EEEAE25AD3E7E7E8BE /* Build configuration list for PBXNativeTarget "StreamingKit" */;
+			buildPhases = (
+				BD0269C0A12A8EADABF42ED5E48465D7 /* Sources */,
+				A0095E1C4AE4454E678446CB4F15A1CA /* Frameworks */,
+				CD106E37C0D8A7DF69358FF380070CD7 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StreamingKit;
+			productName = StreamingKit;
+			productReference = 3C7CEF33E0F4A2893053484F5C0AEAD4 /* libStreamingKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 1A107B8531DEB67B42682B706DF43856 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8CFDD2C87455FA42283A1621BF64D204 /* Pods-NeteaseJukebox */,
+				765B215423CED765A30DBC28F7493C5A /* Pods-NeteaseJukeboxTests */,
+				92148C7BB493534BED89E3E84477AB35 /* StreamingKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BD0269C0A12A8EADABF42ED5E48465D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD0BF9D19B405D99E9A6C5B7E13B9D2A /* NSMutableArray+STKAudioPlayer.m in Sources */,
+				863199C185B4086F98C133E5AE3FD75C /* STKAudioPlayer.m in Sources */,
+				744DFE847F5607060E5ABA62F761902F /* STKAutoRecoveringHTTPDataSource.m in Sources */,
+				552D73BE2F9BCE5876F5C337A7A79E62 /* STKCoreFoundationDataSource.m in Sources */,
+				2F325C7C195670EA817E4FD6513774D2 /* STKDataSource.m in Sources */,
+				9B34060AF25706A9EDC32866B05CAF22 /* STKDataSourceWrapper.m in Sources */,
+				E41BCFBD95613B66DDE664904D21008B /* STKHTTPDataSource.m in Sources */,
+				DD2BFAA423ED0D039504E1FD0881BDE4 /* STKLocalFileDataSource.m in Sources */,
+				3090627084C4C9A0E1A1450B89DDFB14 /* STKQueueEntry.m in Sources */,
+				FA06CF42D6166DDADA7EEE330CC158F6 /* StreamingKit-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D677EE92D5212CB3A3A0EA5E17435D6F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E630040C1AFB20F4689510C8FEDB074 /* Pods-NeteaseJukeboxTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7018CCA402AC18C7D20BA42C632AF33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B0D36F9BBE80B9C5C79AD4CB2D1EA0C /* Pods-NeteaseJukebox-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4D5B998EC07A9BA0B7698A7829F7BF34 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = StreamingKit;
+			target = 92148C7BB493534BED89E3E84477AB35 /* StreamingKit */;
+			targetProxy = 4D5F63DF4A99912B414487927A1BF0CD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0A89A04208CAD29630C5411C3FE126BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E96EFC4DDCE3770BD728F83B0FA663D4 /* Pods-NeteaseJukebox.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		3FA2475660FFC880302AD18E29B2E5FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		4380C0543A895C9A2D780F9B7EC92920 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05C182963263FD7BE2BA9E046A504DED /* Pods-NeteaseJukeboxTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5C1EBC9AB2C213EB4E1CA43BF9390D97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B26E30BA2B4205167CE6600CC90DEDB9 /* Pods-NeteaseJukebox.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		7D24AC2E45C23754E7A10D173F1E6AAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D680C21100D052BF718E97DCD897051F /* StreamingKit.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/StreamingKit/StreamingKit-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		B2E86894B6A4D62C80E55F667BACF078 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D680C21100D052BF718E97DCD897051F /* StreamingKit.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/StreamingKit/StreamingKit-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CB6A116EE24095EC9C631B21BE7D795B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8949A6D2DB7C07E6D8985F7F4926CFBD /* Pods-NeteaseJukeboxTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		F325026B55060D3B22BEC0BAB5FA7344 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FA2475660FFC880302AD18E29B2E5FC /* Debug */,
+				F325026B55060D3B22BEC0BAB5FA7344 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87BF76E0309AB83077C116CFD15AA5EB /* Build configuration list for PBXNativeTarget "Pods-NeteaseJukeboxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4380C0543A895C9A2D780F9B7EC92920 /* Debug */,
+				CB6A116EE24095EC9C631B21BE7D795B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F48DF7989A7BC4EEEAE25AD3E7E7E8BE /* Build configuration list for PBXNativeTarget "StreamingKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2E86894B6A4D62C80E55F667BACF078 /* Debug */,
+				7D24AC2E45C23754E7A10D173F1E6AAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7089B40B26AD7E45BD5276AD138AA1E /* Build configuration list for PBXNativeTarget "Pods-NeteaseJukebox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C1EBC9AB2C213EB4E1CA43BF9390D97 /* Debug */,
+				0A89A04208CAD29630C5411C3FE126BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
