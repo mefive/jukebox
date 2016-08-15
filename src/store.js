@@ -14,7 +14,7 @@ const logger = createLogger({
     actionTypes.DOWNLOAD_IMAGE
   ].includes(action.type)
 });
-const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+const createStoreWithMiddleware = applyMiddleware(thunk, logger)(createStore);
 
 const state = Immutable.fromJS({});
 const store = reducer(state);

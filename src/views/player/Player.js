@@ -1,19 +1,19 @@
 import React, { Component, PropTypes } from 'react';
 import {
-  View
+  NativeModules,
 } from 'react-native';
 
 import { connect } from 'react-redux';
+const { Audio } = NativeModules;
 
-import Video from 'react-native-video';
-import RNFS from 'react-native-fs';
+import fs from 'react-native-fs';
 
 import * as constants from '../../constants';
 import * as filesActions from '../../actions/files';
 import * as playerActions from '../../actions/player';
 
 const songsFolder
-= `${RNFS.CachesDirectoryPath}/${constants.SONG_FILES_FOLDER_NAME}/`;
+= `${fs.CachesDirectoryPath}/${constants.SONG_FILES_FOLDER_NAME}/`;
 
 class Player extends Component {
   constructor(props) {
@@ -28,11 +28,34 @@ class Player extends Component {
       || nextProps.status !== this.props.status;
   }
 
-  getSong(songId, songFiles) {
-    const { dispatch } = this.props;
+  componentWillUpdate(nextProps) {
+    let { songs, songFiles } = nextProps;
+    const { songId, status } = nextProps;
 
-    let { songs } = this.props;
+    songFiles = songFiles.toJS();
     songs = songs.toJS();
+
+    const song = this.getSong(songId, songFiles, songs);
+    console.log(song);
+
+    if (nextProps.songId !== this.props.songId) {
+      Audio.stop();
+      Audio.play(song);
+      return;
+    }
+
+    if (status !== this.props.status) {
+      if (status === constants.PLAYER_STATUS_PLAYING) {
+        Audio.resume();
+      }
+      else {
+        Audio.pause();
+      }
+    }
+  }
+
+  getSong(songId, songFiles, songs) {
+    const { dispatch } = this.props;
 
     const song = songs[songId];
 
@@ -41,7 +64,7 @@ class Player extends Component {
     }
 
     const { hMusicId, hMp3Url } = song;
-
+console.log(song);
     const fileName = `${hMusicId}.mp3`;
     const absoluteFileName = `${songsFolder}${fileName}`;
     const songFile = songFiles[fileName];
@@ -60,7 +83,7 @@ class Player extends Component {
       return hMp3Url;
     }
 
-    return absoluteFileName;
+    return `file://${absoluteFileName}`;
   }
 
   setDuration({ duration }) {
@@ -80,31 +103,7 @@ class Player extends Component {
   }
 
   render() {
-    let { songFiles } = this.props;
-    const { songId, status } = this.props;
-
-    songFiles = songFiles.toJS();
-
-    const song = this.getSong(songId, songFiles);
-
-    return (
-      <View style={{ height: 0 }}>
-        {song
-        ? (
-          <Video
-            source={{ uri: song }}
-            paused={status !== constants.PLAYER_STATUS_PLAYING}
-            onLoad={this.setDuration}
-            onProgress={this.setCurrentTime}
-            playInBackground
-            playWhenInactive
-            onEnd={this.playNext}
-            ref="player"
-          />
-        )
-        : null}
-      </View>
-    );
+    return null;
   }
 }
 

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'CBC7A4964BD0A1BE24615B96DE7495B1'
-               BlueprintName = 'Pods-NeteaseJukebox'
+               BlueprintIdentifier = 'B2EAB3C08188F110EA8DE61B739A20D0'
+               BlueprintName = 'StreamingKit'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-NeteaseJukebox.a'>
+               BuildableName = 'libStreamingKit.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -14,8 +14,29 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>StreamingKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>B2EAB3C08188F110EA8DE61B739A20D0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CBC7A4964BD0A1BE24615B96DE7495B1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E2ACD93F008D51C0D205536659226B68</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>
