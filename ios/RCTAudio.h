@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "RCTBridgeModule.h"
+#import "STKAudioPlayer.h"
 
-@interface RCTAudio : NSObject<RCTBridgeModule>
+@interface RCTAudio : NSObject<RCTBridgeModule, STKAudioPlayerDelegate>
 
 @end

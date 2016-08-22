@@ -46,6 +46,7 @@ class SongDownloadManager extends Component {
           );
         }
         else {
+          console.log(`failed url ${url}`);
           alert(`download ${songName} fail`);
         }
 

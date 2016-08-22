@@ -7,11 +7,14 @@
 //
 
 #import "RCTAudio.h"
+#import "RCTEventDispatcher.h"
 #import "STKAudioPlayer.h"
 
 @implementation RCTAudio {
   STKAudioPlayer *player;
 }
+
+@synthesize bridge = _bridge;
 
 RCT_EXPORT_MODULE();
 
@@ -21,9 +24,17 @@ RCT_EXPORT_MODULE();
   
   if (self = [super init]) {
     player = [[STKAudioPlayer alloc] init];
+    [player setDelegate:self];
   }
   
   return self;
+}
+
+-(void) dealloc
+{
+  NSLog(@"dealloc Aduio");
+  [player setDelegate:nil];
+  [player dispose];
 }
 
 RCT_EXPORT_METHOD(play:(NSString *)url)
@@ -46,10 +57,59 @@ RCT_EXPORT_METHOD(stop)
   [player stop];
 }
 
--(void) dealloc
+#pragma mark - StreamingKit Audio Player
+
+- (void)audioPlayer:(STKAudioPlayer *)player didStartPlayingQueueItemId:(NSObject *)queueItemId
 {
-  NSLog(@"dealloc Audio");
-  
-  [player dispose];
+  NSLog(@"AudioPlayer is playing");
+}
+
+- (void)audioPlayer:(STKAudioPlayer *)player didFinishPlayingQueueItemId:(NSObject *)queueItemId withReason:(STKAudioPlayerStopReason)stopReason andProgress:(double)progress andDuration:(double)duration
+{
+  NSLog(@"AudioPlayer has stopped");
+  [self.bridge.eventDispatcher sendDeviceEventWithName:@"AudioBridgeEvent"
+                                                  body:@{@"status": @"STOPPED"}];
+}
+
+- (void)audioPlayer:(STKAudioPlayer *)player didFinishBufferingSourceWithQueueItemId:(NSObject *)queueItemId
+{
+  NSLog(@"AudioPlayer finished buffering");
+}
+
+- (void)audioPlayer:(STKAudioPlayer *)player stateChanged:(STKAudioPlayerState)state previousState:(STKAudioPlayerState)previousState
+{
+  NSLog(@"AudioPlayer state has changed");
+  switch (state) {
+    case STKAudioPlayerStatePlaying:
+      [self.bridge.eventDispatcher sendDeviceEventWithName:@"AudioBridgeEvent"
+                                                      body:@{@"status": @"PLAYING"}];
+      break;
+      
+    case STKAudioPlayerStatePaused:
+      [self.bridge.eventDispatcher sendDeviceEventWithName:@"AudioBridgeEvent"
+                                                      body:@{@"status": @"PAUSED"}];
+      break;
+      
+    case STKAudioPlayerStateStopped:q
+      
+      break;
+      
+    case STKAudioPlayerStateBuffering:
+      [self.bridge.eventDispatcher sendDeviceEventWithName:@"AudioBridgeEvent"
+                                                      body:@{@"status": @"BUFFERING"}];
+      break;
+      
+    case STKAudioPlayerStateError:
+      [self.bridge.eventDispatcher sendDeviceEventWithName:@"AudioBridgeEvent"
+                                                      body:@{@"status": @"ERROR"}];
+      break;
+      
+    default:
+      break;
+  }
+}
+
+- (void)audioPlayer:(STKAudioPlayer *)player unexpectedError:(STKAudioPlayerErrorCode)errorCode {
+  NSLog(@"AudioPlayer unexpected Error with code %d", errorCode);
 }
 @end

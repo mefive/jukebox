@@ -1,6 +1,8 @@
-import React, { Component, PropTypes } from 'react';
+import { Component, PropTypes } from 'react';
 import {
+  Alert,
   NativeModules,
+  NativeAppEventEmitter
 } from 'react-native';
 
 import { connect } from 'react-redux';
@@ -15,17 +17,47 @@ import * as playerActions from '../../actions/player';
 const songsFolder
 = `${fs.CachesDirectoryPath}/${constants.SONG_FILES_FOLDER_NAME}/`;
 
+const AUDIO_STATUS_INIT = 'INIT';
+const AUDIO_STATUS_PLAYING = 'PLAYING';
+const AUDIO_STATUS_PAUSED = 'PAUSED';
+const AUDIO_STATUS_STOPPED = 'STOPPED';
+
 class Player extends Component {
   constructor(props) {
     super(props);
 
     this.setDuration = this.setDuration.bind(this);
     this.setCurrentTime = this.setCurrentTime.bind(this);
+
+    NativeAppEventEmitter.addListener(
+      'AudioBridgeEvent',
+      e => {
+        const { status } = e;
+
+        if ([
+          AUDIO_STATUS_PLAYING,
+          AUDIO_STATUS_PAUSED,
+          AUDIO_STATUS_STOPPED
+        ].includes(status)) {
+          if (!this.state.needChangeSong && status === AUDIO_STATUS_STOPPED) {
+            this.props.dispatch(playerActions.pause);
+            Alert.alert('提示', '播放失败');
+          }
+          this.setState({ audioDeviceStatus: e.status });
+        }
+      }
+    );
+
+    this.state = {
+      audioDeviceStatus: AUDIO_STATUS_INIT,
+      needChangeSong: false
+    };
   }
 
-  shouldComponentUpdate(nextProps) {
+  shouldComponentUpdate(nextProps, nextState) {
     return nextProps.songId !== this.props.songId
-      || nextProps.status !== this.props.status;
+      || nextProps.status !== this.props.status
+      || nextState.audioDeviceStatus !== this.state.audioDeviceStatus;
   }
 
   componentWillUpdate(nextProps) {
@@ -36,11 +68,16 @@ class Player extends Component {
     songs = songs.toJS();
 
     const song = this.getSong(songId, songFiles, songs);
-    console.log(song);
 
     if (nextProps.songId !== this.props.songId) {
-      Audio.stop();
-      Audio.play(song);
+      if (![AUDIO_STATUS_STOPPED, AUDIO_STATUS_INIT]
+        .includes(this.state.audioDeviceStatus)) {
+        this.state.needChangeSong = true;
+        Audio.stop();
+      }
+      else {
+        Audio.play(song);
+      }
       return;
     }
 
@@ -54,6 +91,43 @@ class Player extends Component {
     }
   }
 
+  componentDidUpdate() {
+    const { songId } = this.props;
+    const { audioDeviceStatus, needChangeSong } = this.state;
+
+    let { songs, songFiles } = this.props;
+
+    songFiles = songFiles.toJS();
+    songs = songs.toJS();
+
+    const song = this.getSong(songId, songFiles, songs);
+
+    if (audioDeviceStatus === AUDIO_STATUS_PLAYING) {
+      if (!this.timer) {
+        this.setCurrentTime();
+      }
+    }
+    else {
+      if (this.timer) {
+        clearTimeout(this.timer);
+        this.timer = null;
+      }
+    }
+
+    if (needChangeSong
+      && audioDeviceStatus === AUDIO_STATUS_STOPPED
+    ) {
+      this.state.needChangeSong = false;
+      Audio.play(song);
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.timer) {
+      clearTimeout(this.timer);
+    }
+  }
+
   getSong(songId, songFiles, songs) {
     const { dispatch } = this.props;
 
@@ -64,18 +138,18 @@ class Player extends Component {
     }
 
     const { hMusicId, hMp3Url } = song;
-console.log(song);
+
     const fileName = `${hMusicId}.mp3`;
     const absoluteFileName = `${songsFolder}${fileName}`;
     const songFile = songFiles[fileName];
     if (!songFile) {
-      setTimeout(() => {
-        if (this.props.songId === songId) {
-          dispatch(filesActions.downloadSong({
-            songId, fileName, url: hMp3Url
-          }));
-        }
-      }, 5000);
+      // setTimeout(() => {
+      //   if (this.props.songId === songId) {
+      //     dispatch(filesActions.downloadSong({
+      //       songId, fileName, url: hMp3Url
+      //     }));
+      //   }
+      // }, 5000);
 
       return hMp3Url;
     }
@@ -91,10 +165,11 @@ console.log(song);
       playerActions.updateDuration(duration));
   }
 
-  setCurrentTime({ currentTime }) {
-    this.props.dispatch(
-      playerActions.updateCurrentTime(currentTime)
-    );
+  setCurrentTime({ currentTime = 0 } = {}) {
+    // this.props.dispatch(
+    //   playerActions.updateCurrentTime(currentTime)
+    // );
+    this.timer = setTimeout(this.setCurrentTime, 1000);
   }
 
   playNext() {
