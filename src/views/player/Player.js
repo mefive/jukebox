@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 const { Audio } = NativeModules;
 
 import fs from 'react-native-fs';
+import MusicControl from 'react-native-music-control';
 
 import * as constants from '../../constants';
 import * as filesActions from '../../actions/files';
@@ -57,6 +58,26 @@ class Player extends Component {
       audioDeviceStatus: AUDIO_STATUS_INIT,
       needChangeSong: false
     };
+
+    MusicControl.enableControl('nextTrack', true);
+    MusicControl.enableControl('previousTrack', true);
+    MusicControl.enableControl('play', true);
+    MusicControl.enableControl('pause', true);
+
+
+    MusicControl.enableBackgroundMode(true);
+    MusicControl.on('play', () => {
+      console.log('MusicControl play');
+    });
+    MusicControl.on('pause', () => {
+      console.log('MusicControl pause');
+    });
+    MusicControl.on('nextTrack', () => {
+      console.log('MusicControl nextTrack');
+    });
+    MusicControl.on('previousTrack', () => {
+      console.log('MusicControl previousTrack');
+    });
   }
 
   shouldComponentUpdate(nextProps, nextState) {

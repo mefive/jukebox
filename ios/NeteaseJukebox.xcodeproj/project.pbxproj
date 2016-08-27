@@ -31,6 +31,7 @@
 		68669A5A4E41C98D59A8E219 /* libPods-NeteaseJukeboxTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E50EF8E9468CF6CF4812C3F /* libPods-NeteaseJukeboxTests.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		851FE05BDBA4D67AB6E59593 /* libPods-NeteaseJukebox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 944F1CCCE10A55D8983AD4EA /* libPods-NeteaseJukebox.a */; };
+		879ECB3D9DC14D4A9CD53925 /* libMusicControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F6CA89953D4546A4061133 /* libMusicControl.a */; };
 		954E62A621F04C27999961CC /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D17A91E2A0D34790A5FCEFB8 /* Zocial.ttf */; };
 		9C82229160AB4DF8A6C3CDB9 /* libRCTVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39CDA5F0F6D941C48AB636FA /* libRCTVideo.a */; };
 		D26398F4AB1A4B3190973064 /* libRNBlur.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F15DD52865DA483C8407CF11 /* libRNBlur.a */; };
@@ -139,6 +140,13 @@
 			remoteGlobalIDString = A68BD7BC1BC31318005F02DF;
 			remoteInfo = RNBlur;
 		};
+		20438D8E1D71CC1F0046D125 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E11AE948A1C044EEBFD31BBB /* MusicControl.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = MusicControl;
+		};
 		78C398B81ACF4ADC00677621 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
@@ -165,6 +173,7 @@
 		00E356EE1AD99517003FC87E /* NeteaseJukeboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeteaseJukeboxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* NeteaseJukeboxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NeteaseJukeboxTests.m; sourceTree = "<group>"; };
+		07F6CA89953D4546A4061133 /* libMusicControl.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libMusicControl.a; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* NeteaseJukebox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeteaseJukebox.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,6 +207,7 @@
 		D17A91E2A0D34790A5FCEFB8 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		D6C552A703E048318D989C40 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		D7BB3B8C90864C7F992AF74A /* RNFS.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNFS.xcodeproj; path = "../node_modules/react-native-fs/RNFS.xcodeproj"; sourceTree = "<group>"; };
+		E11AE948A1C044EEBFD31BBB /* MusicControl.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = MusicControl.xcodeproj; path = "../node_modules/react-native-music-control/ios/MusicControl.xcodeproj"; sourceTree = "<group>"; };
 		E1F2C0FA2CA8665DBB2FDB6E /* Pods-NeteaseJukeboxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeteaseJukeboxTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NeteaseJukeboxTests/Pods-NeteaseJukeboxTests.release.xcconfig"; sourceTree = "<group>"; };
 		E648AF7164664C38B6BE8E3F /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		F15DD52865DA483C8407CF11 /* libRNBlur.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNBlur.a; sourceTree = "<group>"; };
@@ -233,6 +243,7 @@
 				E2E7864B088A4298A0C889D6 /* libRNFS.a in Frameworks */,
 				9C82229160AB4DF8A6C3CDB9 /* libRCTVideo.a in Frameworks */,
 				851FE05BDBA4D67AB6E59593 /* libPods-NeteaseJukebox.a in Frameworks */,
+				879ECB3D9DC14D4A9CD53925 /* libMusicControl.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +387,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		20438D8A1D71CC1F0046D125 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				20438D8F1D71CC1F0046D125 /* libMusicControl.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		693E4C2B2F3B0A1C86692A8D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -411,6 +430,7 @@
 				207085D0316A4C25BAE02B75 /* RNBlur.xcodeproj */,
 				D7BB3B8C90864C7F992AF74A /* RNFS.xcodeproj */,
 				7EFF523C252443FAB636A1CB /* RCTVideo.xcodeproj */,
+				E11AE948A1C044EEBFD31BBB /* MusicControl.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -548,6 +568,10 @@
 				{
 					ProductGroup = 201F6CD51D55D11100BB260C /* Products */;
 					ProjectRef = 201F6CD41D55D11100BB260C /* ART.xcodeproj */;
+				},
+				{
+					ProductGroup = 20438D8A1D71CC1F0046D125 /* Products */;
+					ProjectRef = E11AE948A1C044EEBFD31BBB /* MusicControl.xcodeproj */;
 				},
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
@@ -704,6 +728,13 @@
 			fileType = archive.ar;
 			path = libRNBlur.a;
 			remoteRef = 204001781D4C80EA00CC0278 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		20438D8F1D71CC1F0046D125 /* libMusicControl.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMusicControl.a;
+			remoteRef = 20438D8E1D71CC1F0046D125 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		78C398B91ACF4ADC00677621 /* libRCTLinking.a */ = {
@@ -916,6 +947,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -934,6 +966,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -959,6 +992,7 @@
 					"$(SRCROOT)/../node_modules/react-native-blur/ios",
 					"$(SRCROOT)/../node_modules/react-native-fs/**",
 					"$(SRCROOT)/../node_modules/react-native-video",
+					"$(SRCROOT)/../node_modules/react-native-music-control/ios",
 				);
 				INFOPLIST_FILE = NeteaseJukebox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -985,6 +1019,7 @@
 					"$(SRCROOT)/../node_modules/react-native-blur/ios",
 					"$(SRCROOT)/../node_modules/react-native-fs/**",
 					"$(SRCROOT)/../node_modules/react-native-video",
+					"$(SRCROOT)/../node_modules/react-native-music-control/ios",
 				);
 				INFOPLIST_FILE = NeteaseJukebox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1041,6 +1076,7 @@
 					"$(SRCROOT)/../node_modules/react-native-blur/ios",
 					"$(SRCROOT)/../node_modules/react-native-fs/**",
 					"$(SRCROOT)/../node_modules/react-native-video",
+					"$(SRCROOT)/../node_modules/react-native-music-control/ios",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -1085,6 +1121,7 @@
 					"$(SRCROOT)/../node_modules/react-native-blur/ios",
 					"$(SRCROOT)/../node_modules/react-native-fs/**",
 					"$(SRCROOT)/../node_modules/react-native-video",
+					"$(SRCROOT)/../node_modules/react-native-music-control/ios",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;

@@ -1,6 +1,7 @@
 package com.rntest;
 
 import com.facebook.react.ReactActivity;
+import com.tanguyantoine.MusicControl.MusicControlPackage;
 import com.brentvatne.RCTVideo.ReactVideoPackage;
 import com.rnfs.RNFSPackage;
 import com.cmcewen.blurview.BlurViewPackage;
@@ -39,6 +40,7 @@ public class MainActivity extends ReactActivity {
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
             new MainReactPackage(),
+            new MusicControlPackage(),
             new ReactVideoPackage(),
             new RNFSPackage(),
             new BlurViewPackage(),
