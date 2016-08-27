@@ -3,12 +3,12 @@ import {
   View,
   TouchableOpacity,
   TouchableWithoutFeedback,
-  StyleSheet
+  StyleSheet,
+  Dimensions
 } from 'react-native';
 import { connect } from 'react-redux';
 
-import Icon from 'react-native-vector-icons/Ionicons';
-import { AnimatedCircularProgress } from 'react-native-circular-progress';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import * as color from '../../constants/color';
 import * as constants from '../../constants';
@@ -46,13 +46,7 @@ const styles = StyleSheet.create({
     width: 32,
     height: 32,
     alignItems: 'center',
-    justifyContent: 'center',
-    position: 'absolute',
-    top: -1,
-    left: -1,
-    borderColor: color.primary,
-    borderWidth: 1,
-    borderRadius: 32
+    justifyContent: 'center'
   },
 
   actionIcon: {
@@ -65,6 +59,10 @@ class PlayerPanel extends Component {
     super(props);
     this.doAction = this.doAction.bind(this);
     this.goPlayerView = this.goPlayerView.bind(this);
+
+    this.state = {
+      width: Dimensions.get('window').width
+    };
   }
 
   shouldComponentUpdate(nextProps) {
@@ -77,18 +75,18 @@ class PlayerPanel extends Component {
     if (status === constants.PLAYER_STATUS_PLAYING) {
       return (
         <Icon
-          name="md-pause"
-          size={20}
-          style={[styles.actionIcon, { marginTop: 2 }]}
+          name="pause-circle"
+          size={30}
+          style={[styles.actionIcon]}
         />
       );
     }
 
     return (
       <Icon
-        name="md-play"
-        size={20}
-        style={[styles.actionIcon, { marginLeft: 3, marginTop: 2 }]}
+        name="play-circle"
+        size={30}
+        style={[styles.actionIcon]}
       />
     );
   }
@@ -129,9 +127,10 @@ class PlayerPanel extends Component {
     }
 
     const { duration, currentTime } = this.props;
+    const { width } = this.state;
 
     const percent = duration
-      ? Math.floor((currentTime / duration) * 100) || 1
+      ? (currentTime / duration)
       : 0;
 
     return (
@@ -139,15 +138,17 @@ class PlayerPanel extends Component {
         onPress={this.goPlayerView}
       >
         <View style={styles.container}>
+          <View
+            style={{
+              height: 2,
+              width: (width * percent),
+              backgroundColor: color.primary,
+              position: 'absolute',
+              top: 0,
+              left: 0
+            }}
+          />
           <View style={styles.action}>
-            <AnimatedCircularProgress
-              size={30}
-              width={2}
-              fill={percent}
-              backgroundColor={color.white}
-              tintColor={color.primary}
-              rotation={0}
-            />
             <TouchableOpacity
               style={styles.actionButton}
               onPress={this.doAction}

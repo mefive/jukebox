@@ -57,6 +57,12 @@ RCT_EXPORT_METHOD(stop)
   [player stop];
 }
 
+RCT_EXPORT_METHOD(getCurrentTime: (RCTResponseSenderBlock) callback)
+{
+  double progress = [player progress];
+  callback(@[[NSNull null], @{@"progress": @(progress)}]);
+}
+
 #pragma mark - StreamingKit Audio Player
 
 - (void)audioPlayer:(STKAudioPlayer *)player didStartPlayingQueueItemId:(NSObject *)queueItemId
@@ -80,17 +86,19 @@ RCT_EXPORT_METHOD(stop)
 {
   NSLog(@"AudioPlayer state has changed");
   switch (state) {
-    case STKAudioPlayerStatePlaying:
+    case STKAudioPlayerStatePlaying: {
+      double duration = [player duration];
       [self.bridge.eventDispatcher sendDeviceEventWithName:@"AudioBridgeEvent"
-                                                      body:@{@"status": @"PLAYING"}];
+                                                      body:@{@"status": @"PLAYING", @"duration": @(duration)}];
       break;
+    }
       
     case STKAudioPlayerStatePaused:
       [self.bridge.eventDispatcher sendDeviceEventWithName:@"AudioBridgeEvent"
                                                       body:@{@"status": @"PAUSED"}];
       break;
       
-    case STKAudioPlayerStateStopped:q
+    case STKAudioPlayerStateStopped:
       
       break;
       

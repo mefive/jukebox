@@ -32,7 +32,7 @@ class Player extends Component {
     NativeAppEventEmitter.addListener(
       'AudioBridgeEvent',
       e => {
-        const { status } = e;
+        const { status, duration } = e;
 
         if ([
           AUDIO_STATUS_PLAYING,
@@ -43,6 +43,11 @@ class Player extends Component {
             this.props.dispatch(playerActions.pause);
             Alert.alert('提示', '播放失败');
           }
+
+          if (status === AUDIO_STATUS_PLAYING) {
+            this.setDuration(duration);
+          }
+
           this.setState({ audioDeviceStatus: e.status });
         }
       }
@@ -77,6 +82,7 @@ class Player extends Component {
       }
       else {
         Audio.play(song);
+        this.setDuration(0);
       }
       return;
     }
@@ -119,6 +125,7 @@ class Player extends Component {
     ) {
       this.state.needChangeSong = false;
       Audio.play(song);
+      this.setDuration(0);
     }
   }
 
@@ -143,13 +150,13 @@ class Player extends Component {
     const absoluteFileName = `${songsFolder}${fileName}`;
     const songFile = songFiles[fileName];
     if (!songFile) {
-      // setTimeout(() => {
-      //   if (this.props.songId === songId) {
-      //     dispatch(filesActions.downloadSong({
-      //       songId, fileName, url: hMp3Url
-      //     }));
-      //   }
-      // }, 5000);
+      setTimeout(() => {
+        if (this.props.songId === songId) {
+          dispatch(filesActions.downloadSong({
+            songId, fileName, url: hMp3Url
+          }));
+        }
+      }, 5000);
 
       return hMp3Url;
     }
@@ -160,15 +167,15 @@ class Player extends Component {
     return `file://${absoluteFileName}`;
   }
 
-  setDuration({ duration }) {
+  setDuration(duration = 0) {
     this.props.dispatch(
       playerActions.updateDuration(duration));
   }
 
-  setCurrentTime({ currentTime = 0 } = {}) {
-    // this.props.dispatch(
-    //   playerActions.updateCurrentTime(currentTime)
-    // );
+  setCurrentTime() {
+    Audio.getCurrentTime((error, event) => this.props.dispatch(
+      playerActions.updateCurrentTime(event.progress)
+    ));
     this.timer = setTimeout(this.setCurrentTime, 1000);
   }
 
